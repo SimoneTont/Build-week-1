@@ -24,8 +24,9 @@ img{
 /*DOMANDA*/
 
 #domanda{
+    margin: 2rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     color: white;
     
@@ -33,11 +34,24 @@ img{
 
 /*RISPOSTE*/
 
-/*id risposte{
-    color: white;
+button{
+    text-align: center;
+    color: rgb(253, 249, 249);
     border-radius: 2rem;
-    height: 2rem;
-    width: 5rem;
+    height: 3rem;
+    width: 15rem;
+    font-size: 1rem;
+    margin: 1rem;
+    background: rgb(255, 255, 255, 0.1);
+    border-color: white;
 }
 
+button:hover{
+    background-color: rgb(209, 0, 146);
+    border-color: rgba(241, 241, 241, 0.5);
+}
+
+#risposte{
+    text-align: center;
+}
 /*TRACKER*/
