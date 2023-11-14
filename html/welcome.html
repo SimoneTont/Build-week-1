@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleWelcome.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400,800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -14,9 +18,9 @@
 
     <div class="container">
 
-        <h1>Welcome to your exam</h1>
+        <h1>Welcome to<br> <span>your exam</span></h1>
         <h2>Instructions</h2>
-        <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure about a few of them.</p>
+        <p>We don't expect most engineers to know the answers to all of these <br> questions, so don't worry if you're unsure about a few of them.</p>
 
         <ul>
             <li>Each question is <span>timed</span> and can only be <span>answered once.</span></li>
@@ -24,14 +28,15 @@
             <li>This exam will take approx <span>0-5 minutes.</span></li>
         </ul>
 
-        <form action="#" method="get">
-            <input type="checkbox" name="casella">
+        <form class="form-welcome" action="benchmark.html">
+            <input type="checkbox" name="casella" id="casellina">
             <p>I promise to answer myself without help from anyone.</p>
-            <button>PROCEED</button>
+            <button id="bottone" type="submit">PROCEED</button>
         </form>
     </div>
 
     <script type="D4"></script><br>
     <script src="../js/script.js"></script>
+    <script src="../js/welcome.js"></script>
 </body>
 </html>
