@@ -132,7 +132,7 @@ function genButton(qc) {
   let button = document.getElementsByTagName("button");
   for (i = 0; i < answersNum; i++) {
     let rand = Math.floor(Math.random() * answersNum);
-    // console.log(usedButton);
+    console.log(usedButton);
     if (!usedButton.includes(rand)) {
       usedButton.push(rand);
       button[rand].innerText = questions[qc].incorrect_answers[i];
