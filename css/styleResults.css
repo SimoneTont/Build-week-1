@@ -75,10 +75,11 @@ div
 /*div Risultato*/
 #Risultato
 {
+    border-style: solid;
     display: inline-block;
     border: 1.5rem solid;
     border-radius: 100%;
-    border-color: white;
+    border-color: #C2128D #00FFFF;
     margin: 5%;
     padding: 3%;
 }
