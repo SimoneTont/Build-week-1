@@ -104,7 +104,7 @@ function loadQ(qc) {
   //   console.log(questions[qc].question);
   let singleQuestion = questions[qc].question;
   //   console.log(qc);
-  document.querySelector("p").innerHTML = `<p>${singleQuestion}</p>`;
+  document.querySelector("#domanda").innerHTML = `<p>${singleQuestion}</p>`;
   genButton(qc);
 }
 
