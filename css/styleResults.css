@@ -35,7 +35,7 @@ div
 }
 #Corretto
 {
-    text-align: left;
+    display: inline-block;
 }
 #Corretto .TestoPiccolo
 {
@@ -53,7 +53,7 @@ div
 }
 #Sbagliato
 { 
-    text-align: right;
+    display: inline-block;
 }
 #Sbagliato .TestoPiccolo
 {
@@ -71,12 +71,12 @@ div
 }
 #Risultato
 {
+    display: inline-block;
     border: 1rem solid;
-    /*border-image:   linear-gradient(to right, #C2128D 50%, #00FFFF 50%) 5;*/
     border-radius: 100%;
-    border-color: #00FFFF;
-    margin: auto;
-    padding:3%;
+    border-color: white;
+    margin: 5%;
+    padding: 3%;
 }
 #Esame2
 {
@@ -99,5 +99,5 @@ button
 }
 #Risultati
 {
-    display: inline-block;
+
 }
