@@ -25,10 +25,6 @@ h1
     font-size: xx-large;
     font-weight: bolder;
 }
-main
-{
-    margin-top: 5%;
-}
 div
 {
     text-align: center;
@@ -72,7 +68,7 @@ div
 #Risultato
 {
     display: inline-block;
-    border: 1rem solid;
+    border: 1.5rem solid;
     border-radius: 100%;
     border-color: white;
     margin: 5%;
