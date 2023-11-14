@@ -7,13 +7,16 @@ body{
     background-size: cover;
     color: white;
 }
+/*header*/
 header h1
 {
     text-align: center;
+    font-size: xx-large;
 }
 header p
 {
     text-align: center;
+    font-size: x-large;
 }
 header img
 {
@@ -25,13 +28,19 @@ h1
     font-size: xx-large;
     font-weight: bolder;
 }
+/*main*/
 div
 {
     text-align: center;
 }
+/*div Corretto*/
 #Corretto
 {
-    text-align: left;
+    display: inline-block;
+}
+#Corretto .TestoPiccolo
+{
+    font-size: small;
 }
 #Corretto h2
 {
@@ -43,10 +52,15 @@ div
     font-size: xx-large;
     font-weight: bolder;
 }
+/*div Sbagliato*/
 #Sbagliato
+{ 
+    display: inline-block;
+    opacity: 70%;
+}
+#Sbagliato .TestoPiccolo
 {
-    font-style: 'sans-serif';
-    text-align: right;
+    font-size: small;
 }
 #Sbagliato h2
 {
@@ -58,28 +72,31 @@ div
     font-size: xx-large;
     font-weight: bolder;
 }
+/*div Risultato*/
 #Risultato
 {
-    border: 1rem solid ;
-    border-image:   linear-gradient(to right, #C2128D 50%, #00FFFF 50%) 5;
+    display: inline-block;
+    border: 1.5rem solid;
     border-radius: 100%;
-    margin-left: 40%;
-    margin-right: 40%;
-    padding:3%;
+    border-color: white;
+    margin: 5%;
+    padding: 3%;
 }
+/*Id Esame*/
 #Esame2
 {
     color: #00FFFF;
 }
-#Esame3
-{
-    font-weight:lighter;
-}
 button
 {
     background-color: transparent;
-    border: 1px solid white;
+    border: 3px solid white;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     color: white;
+    font-size: larger;
+    font-weight: bolder;
+    opacity: 70%;
 }

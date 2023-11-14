@@ -1,5 +1,3 @@
-let answerButton = document.querySelector(".answerButton");
-
 const questions = [
   {
     category: "Science: Computers",
@@ -106,12 +104,12 @@ function loadQ(qc) {
   //   console.log(questions[qc].question);
   let singleQuestion = questions[qc].question;
   //   console.log(qc);
-  document.querySelector("p").innerHTML = `<p>${singleQuestion}</p>`;
+  document.querySelector("#domanda").innerHTML = `<p>${singleQuestion}</p>`;
   genButton(qc);
 }
 
 //funzione per passare alla domanda succesiva al click
-let buttonDiv = document.getElementById("buttonContainer");
+let buttonDiv = document.getElementById("risposte");
 function nextQuestion(qc) {
   buttonDiv.addEventListener("click", (event) => {
     const isButton = event.target.nodeName;
@@ -125,28 +123,28 @@ function nextQuestion(qc) {
   });
 }
 function genButton(qc) {
+  let usedButton = [];
   let answersNum = questions[qc].incorrect_answers.length + 1;
   for (i = 0; i < answersNum; i++) {
     let buttonCreate = document.createElement("button");
     buttonDiv.appendChild(buttonCreate);
   }
-  insAnsw(answersNum, qc);
-
-  console.log(answersNum);
-}
-
-function insAnsw(an, qc) {
-  let buttonA = document.querySelectorAll("button");
-  let randomButSelect = Math.floor(Math.random() * an);
-  buttonA[randomButSelect].innerText = questions[qc].correct_answer;
-  buttonA[randomButSelect].classList.add("correct");
-
-  console.log(buttonA[3].classList);
-  for (const key in buttonA) {
-    console.log(buttonA[key].innerText);
-    if (buttonA[key].innerText === questions[qc].correct_answer) {
+  let button = document.getElementsByTagName("button");
+  for (i = 0; i < answersNum; i++) {
+    let rand = Math.floor(Math.random() * answersNum);
+    console.log(usedButton);
+    if (!usedButton.includes(rand)) {
+      usedButton.push(rand);
+      button[rand].innerText = questions[qc].incorrect_answers[i];
     } else {
-      buttonA[key].innerText = questions[qc].incorrect_answers[key];
+      i--;
     }
   }
+  for (i = 0; i < answersNum; i++) {
+    console.log(i);
+    if (button[i].innerText === "undefined") {
+      button[i].innerText = questions[qc].correct_answer;
+    }
+  }
+  console.log(button);
 }

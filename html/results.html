@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/styleResults.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <img src="../assets/epicode_logo.png" alt="logoEpicode">
@@ -16,25 +18,29 @@
         </div>
     </header>
     <main>
-        <div id="Corretto">
-            <h2>Correct</h2>
-            <p>66.7%</p>
-            <p>4/6 questions</p>
+        <div id="Contenitore">
+            <div id="Corretto">
+                <h2>Correct</h2>
+                <p>66.7%</p>
+                <p class="TestoPiccolo">4/6 questions</p>
+            </div>
+            <div id="Risultato">
+                <p id="Esame1">Congratulations!</p>
+                <p id="Esame2">You passed the exam</p>
+                <p id="Esame3">We will send you the certificate<br>in a few minutes.<br>Check your email
+                    (including<br>promotions/spam folder)</p>
+            </div>
+            <div id="Sbagliato">
+                <h2>Wrong</h2>
+                <p>33.3%</p>
+                <p class="TestoPiccolo">4/6 questions</p>
+            </div>
         </div>
-        <div id="Risultato">
-            <p id="Esame1">Congratulations!</p>
-            <p id="Esame2">You passed the exam</p>
-            <p id="Esame3">We will send you the certificate<br>in a few minutes.<br>Check your email (including<br>promotions/spam folder)</p>
-        </div>
-        <div id="Sbagliato">
-            <h2>Wrong</h2>
-            <p>33.3%</p>
-            <p>4/6 questions</p>
-        </div>
-        <div>
-            <button>RATE US</button>
+        <div id="Bottone">
+            <button onclick="LinkEpicode()">RATE US</button>
         </div>
     </main>
-    <script src="../js/script.js"></script>
+    <script src="../js/results.js"></script>
 </body>
+
 </html>
