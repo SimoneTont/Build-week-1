@@ -1,0 +1,34 @@
+body{
+    background-image:url('../assets/bg.jpg');
+    margin: 2rem 5rem 0rem 5rem;
+    color: white;
+}
+
+h1{
+    font-family: 'Outfit', sans-serif;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+}
+
+header img{
+    height: 4rem;
+    width: auto;
+}
+
+main{
+    text-align: center;
+}
+
+hr{
+    color: #d20094
+}
+
+.prima img{
+    display: inline-block;
+height:auto;
+width: 35px;
+padding: 0.3rem;
+}
+

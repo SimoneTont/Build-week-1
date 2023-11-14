@@ -1,0 +1,51 @@
+body
+{
+    background-image:url('../assets/bg.jpg');
+    color: white;
+}
+header img
+{
+    height: 4rem;
+    width: auto;
+}
+h1
+{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+div
+{
+    text-align: center;
+}
+#Corretto
+{
+    text-align: left;
+}
+#Corretto h2
+{
+    font-size: xx-large;
+    font-weight: 500;
+}
+#Corretto p
+{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+#Sbagliato
+{
+    text-align: right;
+}
+#Risultato
+{
+    border: 1rem solid white;
+    border-radius: 100%;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding:4%;
+}
+button
+{
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
