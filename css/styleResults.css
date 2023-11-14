@@ -7,13 +7,16 @@ body{
     background-size: cover;
     color: white;
 }
+/*header*/
 header h1
 {
     text-align: center;
+    font-size: xx-large;
 }
 header p
 {
     text-align: center;
+    font-size: x-large;
 }
 header img
 {
@@ -25,10 +28,12 @@ h1
     font-size: xx-large;
     font-weight: bolder;
 }
+/*main*/
 div
 {
     text-align: center;
 }
+/*div Corretto*/
 #Corretto
 {
     display: inline-block;
@@ -47,9 +52,11 @@ div
     font-size: xx-large;
     font-weight: bolder;
 }
+/*div Sbagliato*/
 #Sbagliato
 { 
     display: inline-block;
+    opacity: 70%;
 }
 #Sbagliato .TestoPiccolo
 {
@@ -65,6 +72,7 @@ div
     font-size: xx-large;
     font-weight: bolder;
 }
+/*div Risultato*/
 #Risultato
 {
     display: inline-block;
@@ -74,6 +82,7 @@ div
     margin: 5%;
     padding: 3%;
 }
+/*Id Esame*/
 #Esame2
 {
     color: #00FFFF;
@@ -84,7 +93,7 @@ div
 button
 {
     background-color: transparent;
-    border: 1px solid white;
+    border: 3px solid white;
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 3rem;
@@ -92,8 +101,5 @@ button
     color: white;
     font-size: larger;
     font-weight: bolder;
-}
-#Risultati
-{
-
+    opacity: 70%;
 }
