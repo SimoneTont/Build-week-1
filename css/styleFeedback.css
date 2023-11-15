@@ -1,11 +1,16 @@
+
 body{
-    background-image:url('../assets/bg.jpg');
-    margin: 2rem 5rem 0rem 5rem;
-    color: white;
+    background-image: url("../assets/bg.jpg");
+   margin: 2rem 5rem 0rem 5rem;
+   color: rgb(231, 229, 229);
+   font-family: 'Outfit', sans-serif;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 h1{
     font-family: 'Outfit', sans-serif;
+    font-size: 60px;
 }
 
 p{
@@ -21,9 +26,6 @@ main{
     text-align: center;
 }
 
-hr{
-    color: #d20094
-}
 
 .prima img{
     display: inline-block;
@@ -31,4 +33,37 @@ height:auto;
 width: 35px;
 padding: 0.3rem;
 }
+
+section{
+    padding: 1.8rem;
+
+}
+
+textarea {
+    padding: 1rem;
+    width: 60%;
+    background: transparent;
+    color: #cccccc;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom-color: #D20094;
+    height: 1rem;
+    resize: none;
+  }
+
+  textarea:focus{
+        outline: none;
+  }
+
+  input{
+    background-color: #0ff;
+    color: rgb(1, 1, 22);
+    font-weight: bold;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+    margin: 1rem ;
+  }
 
