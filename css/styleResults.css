@@ -77,17 +77,28 @@ div
 {
     border-style: solid;
     display: inline-block;
-    border: 1.5rem solid;
+    border: 2rem solid;
     border-radius: 100%;
     border-color: #C2128D #00FFFF;
     margin: 5%;
-    padding: 3%;
+    padding: 2%;
 }
 /*Id Esame*/
+#Esame1
+{
+    font-weight: bolder;
+}
 #Esame2
 {
+    font-weight: bolder;
     color: #00FFFF;
 }
+#Esame3
+{
+    margin-top: 2rem;
+    font-size: smaller;
+}
+/*Button*/
 button
 {
     background-color: transparent;
@@ -99,4 +110,5 @@ button
     color: white;
     font-size: larger;
     font-weight: bolder;
+    box-shadow: none;
 }
