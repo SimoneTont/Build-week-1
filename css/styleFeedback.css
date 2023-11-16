@@ -37,15 +37,15 @@ main{
 .fa-star:before /*Se prima c'è la classe fa-star applica questo*/{
     content: "\f005";
   }
-  
-  .rating-list li i.azure {
+
+  .rating-list li i.azure {  /*Colora stelle di azzurro*/
     color:#0ff ;
   }
   
-  .rating-list li i.gray {
+  .rating-list li i.gray {   /*Colora stelle di grigio*/
     color: #bbb;
   }
-  .list-inline {
+  .list-inline { /*Metti stelle allineate e centrate*/
     list-style: none;
     overflow: hidden;
   }
