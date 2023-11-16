@@ -152,7 +152,7 @@ function loadQ(qc) {
 function nextQuestion(event, qc) {
   const isButton = event.target.nodeName;
   console.log(isButton);
-  if (isButton === "LABLE") {
+  if (isButton === "LABEL") {
     console.log(isButton);
     //controlla se viene effetivamente cliccato un bottone, dato che
     //l'eventListener è su tutta la div
@@ -176,19 +176,19 @@ function genButton(qc) {
   for (i = 0; i < answersNum; i++) {
     //ciclo per creare tanti bottoni quante risposte
     let inputCreate = document.createElement("input");
-    let lableCreate = document.createElement("lable");
+    let labelCreate = document.createElement("label");
     inputCreate.id = `questionInput${i}`;
-    risposte.appendChild(lableCreate);
-    lableCreate.appendChild(inputCreate);
+    risposte.appendChild(labelCreate);
+    labelCreate.appendChild(inputCreate);
   }
   let input = document.querySelectorAll("input");
-  let lable = document.querySelectorAll("lable");
+  let lable = document.querySelectorAll("label");
   for (i = 0; i < answersNum; i++) {
     input[i].type = "radio";
     //crea un numero random che rapressenta il lable dove
     //viene inserita una risposta
     let rand = Math.floor(Math.random() * answersNum);
-    // console.log(usedButton);
+    //console.log(usedButton);
     if (!usedButton.includes(rand)) {
       usedButton.push(rand);
       lable[rand].innerText = questions[qc].incorrect_answers[i];
@@ -212,7 +212,7 @@ function updateCountdown(qc) {
   localStorage.setItem("result", correctCounter);
   console.log(localStorage.getItem("result"));
   console.log(seconds);
-  if (seconds > 0) {
+  if (seconds > 1) {
     seconds--;
     timerElement.textContent = seconds;
   } else if (qc === 9) {
@@ -222,9 +222,9 @@ function updateCountdown(qc) {
     timerElement.textContent = 10;
     qc++;
     questionCounter++;
-    // console.log("qc=" + qc);
+    //console.log("qc=" + qc);
     loadQ(qc);
-    // console.log(seconds);
+    //console.log(seconds);
   }
 }
 
