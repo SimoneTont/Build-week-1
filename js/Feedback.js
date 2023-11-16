@@ -6,13 +6,13 @@ const LinkHomeEpicode = function ()
 
 $(function() {
 
-    var current_star_statusses = [];
+    var current_star_statusses = []; //Array posiziono stelle
 
-    star_elements = $('.fa-star').parent();
+    star_elements = $('.fa-star').parent(); //Elementi stella
     
     star_elements.find(".fa-star").each(function(i, elem) {
       current_star_statusses.push($(elem).hasClass('azure'));
-    });
+    }); // Salva posizione stelle azzurre
     
     star_elements.find(".fa-star").mouseenter(changeRatingStars);
     star_elements.find(".fa-star").mouseleave(resetRatingStars);
@@ -42,10 +42,12 @@ $(function() {
 //Effetto glow sul bottone quando passi sopra
 const  GlowingButton = function()
 {
-    const button = document.getElementsByTagName('button')
+    const button = document.getElementsByTagName('button') //assegna button
+    // Quando vai su button aggiungi classe Glowing
     button[0].addEventListener("mousemove", (event) => {
         event=button[0].classList.add("Glowing")
     })
+    // 
     button[0].addEventListener("mouseleave", (event) => {
         event=button[0].classList.remove("Glowing")
     })

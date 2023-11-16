@@ -26,7 +26,7 @@ main{
     text-align: center;
 }
 
-
+/*Lista*/
 .list-inline {
     display: inline;
 }
@@ -34,7 +34,7 @@ main{
 .rating-list{
     display: inline;
 }
-.fa-star:before {
+.fa-star:before /*Se prima c'è la classe fa-star applica questo*/{
     content: "\f005";
   }
   
@@ -49,6 +49,7 @@ main{
     list-style: none;
     overflow: hidden;
   }
+  /*Parametri elementi lista*/
   .list-inline>li {
     list-style:none;
     margin: 0 5px;
@@ -60,7 +61,7 @@ main{
   .rating-list li {
     padding: 0px;
   }
-  
+  /*Codice per visualizzare stelle*/
   .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -75,7 +76,7 @@ section{
     padding: 1.8rem;
 
 }
-
+/*Parametri del campo input*/
 textarea {
     padding: 1rem;
     width: 60%;
@@ -92,7 +93,7 @@ textarea {
   textarea:focus{
         outline: none;
   }
-
+/*Parametri pulsante*/
   button{
     background-color: #0ff;
     color: rgb(1, 1, 22);
@@ -104,7 +105,7 @@ textarea {
     margin: 1rem ;
     cursor: pointer;
   }
- .Glowing
+ .Glowing /* Classe Glowing, serve per il bottone luminoso in JS */
  {
     box-shadow: 3px 3px 15px #00ffff;
     border-color: #0ff;
