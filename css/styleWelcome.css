@@ -14,7 +14,7 @@ img{
 }
 
 .container {
-    max-width: 700px;
+    max-width: 80%;
 }
 
 h1 {
@@ -22,6 +22,7 @@ h1 {
     margin-top: .8em;
     line-height: .8;
     margin-bottom: .4em;
+    color: #fff;
 }
 
 p {
@@ -51,24 +52,72 @@ ul {
 
 li {
     list-style-position: inside;
+    margin-bottom: .3em;
 }
 
 ul span {
     font-weight: 800;
 }
 
-.form-welcome input[name=casella] {
-    display: inline;
-    border: 2px solid white;
-    background-color: #00ffff;
-}
-
-.form-welcome p {
-    display: inline;
+.form-welcome {
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-welcome button {
-    float: right;
+    width: 20%;
+}
+
+.nuova-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.nuova-checkbox {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border: .1em solid white;
+    cursor: pointer;
+}
+
+.nuova-checkbox::after {
+    content: '\2713';
+    opacity: 0;
+    color: #fff;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+.nuova-checkbox input[type="checkbox"]:checked + .nuova-checkbox::after {
+    opacity: 1;
+}
+
+
+
+/* .form-welcome input[type="checkbox"] + p::before {
+    content: "";
+    vertical-align: bottom;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: .1rem;
+    border-color: white;
+}
+
+.form-welcome input[type="checkbox"]:checked + p::before {
+    content: "✓";
+    color: white;
+    text-align: center;
+}
+
+.form-welcome input[type="checkbox"]:checked + p {
+    color: white;
+} */
+
+
+.form-welcome button {
     margin: 0;
     border: 0;
     padding: 0;

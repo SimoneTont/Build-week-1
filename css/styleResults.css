@@ -73,7 +73,7 @@ div
     font-weight: bolder;
 }
 /*div Risultato*/
-#Risultato
+/* #Risultato
 {
     border-style: solid;
     display: inline-block;
@@ -82,9 +82,9 @@ div
     border-color: #C2128D #00FFFF;
     margin: 5%;
     padding: 2%;
-}
+} */
 /*Id Esame*/
-#Esame1
+/* #Esame1
 {
     font-weight: bolder;
 }
@@ -97,7 +97,7 @@ div
 {
     margin-top: 2rem;
     font-size: smaller;
-}
+} */
 /*Button*/
 button
 {
@@ -112,3 +112,51 @@ button
     font-weight: bolder;
     box-shadow: none;
 }
+
+/*CHART*/
+
+#Contenitore {
+    margin: 4rem;
+  }
+  
+  #Corretto,
+  #chart,
+  #Sbagliato {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  #Corretto,
+  #Sbagliato {
+    margin: 2rem;
+    width: auto; /* Imposta la larghezza su "auto" per adattarsi al contenuto */
+  }
+
+  
+  #myChart {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+  }
+  
+  #centerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #000;
+    pointer-events: none;
+  }
+
+  #centerText:first-child{
+    font-weight: bold;
+    color: white;
+  }
+  
+  #centerText:nth-child(1){
+    font-weight: bold;
+    color: #00FFFF;
+  }
