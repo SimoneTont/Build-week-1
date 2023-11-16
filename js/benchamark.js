@@ -1,3 +1,10 @@
+let risposte = document.getElementById("risposte");
+let timerElement = document.getElementById("timer");
+
+let questionCounter = 0;
+let time = 60;
+let correctCounter = 0;
+
 const questions = [
   {
     category: "Science: Computers",
@@ -95,56 +102,133 @@ const questions = [
 ];
 
 window.onload = function () {
-  let questionCounter = 0;
   loadQ(questionCounter);
-  nextQuestion(questionCounter);
+  risposte.addEventListener("click", (event) => {
+    nextQuestion(event, questionCounter);
+    correctACheck(event, questionCounter);
+    updateCountdown(questionCounter);
+    timerElement.textContent = 10;
+  });
 };
 
+//controlla se una risposta è corretta
+function correctACheck(event, qc) {
+  const isCorrect = event.target.innerHTML;
+  console.log(qc);
+  console.log(isCorrect);
+  if (isCorrect === questions[qc - 1].correct_answer) {
+    correctCounter++;
+    console.log(correctCounter);
+  }
+}
+
+//inserice domanda per domanda all'interno del suo div ogni volta che viene chiamato
 function loadQ(qc) {
-  //   console.log(questions[qc].question);
   let singleQuestion = questions[qc].question;
-  //   console.log(qc);
   document.querySelector("#domanda").innerHTML = `<p>${singleQuestion}</p>`;
   genButton(qc);
 }
 
+// function timer(qc) {
+//   if (time > 0) {
+//     timerDiv.innerText = time;
+//     time--;
+//     countDown = setTimeout(function () {
+//       timer(qc);
+//     }, 1000);
+//   } else if (qc === 9) {
+//     window.location.href = "../html/results.html";
+//   } else {
+//     qc++;
+//     risposte.innerHTML = "";
+//     loadQ(qc);
+//     time = 60;
+//     countDown = setTimeout(function () {
+//       timer(qc);
+//     }, 1000);
+//   }
+// }
 //funzione per passare alla domanda succesiva al click
-let buttonDiv = document.getElementById("risposte");
-function nextQuestion(qc) {
-  buttonDiv.addEventListener("click", (event) => {
-    const isButton = event.target.nodeName;
-    if (isButton === "BUTTON") {
-      qc++;
-      //   console.log(qc);
-      //   console.dir(event.target.nodeName);
-      buttonDiv.innerHTML = "";
+function nextQuestion(event, qc) {
+  const isButton = event.target.nodeName;
+  console.log(isButton);
+  if (isButton === "LABLE") {
+    //controlla se viene effetivamente cliccato un bottone, dato che
+    //l'eventListener è su tutta la div
+    qc++;
+    questionCounter++;
+    if (qc === 10) {
+      window.location.href = "../html/results.html";
+    } else {
+      console.log(qc);
+      risposte.innerHTML = "";
       loadQ(qc);
     }
-  });
+  }
 }
+//genere un tutti i bottoni e inserice le risposte in dei
+//bottoni scelti casualmente
 function genButton(qc) {
   let usedButton = [];
-  let answersNum = questions[qc].incorrect_answers.length + 1;
+  let answersNum = questions[qc].incorrect_answers.length + 1; //il numero di bottoni da creare = risposteSbagliate+1(rispostaCorretta)
+
   for (i = 0; i < answersNum; i++) {
-    let buttonCreate = document.createElement("button");
-    buttonDiv.appendChild(buttonCreate);
+    //ciclo per creare tanti bottoni quante risposte
+    let inputCreate = document.createElement("input");
+    let lableCreate = document.createElement("lable");
+    inputCreate.id = `questionInput${i}`;
+    risposte.appendChild(lableCreate);
+    lableCreate.appendChild(inputCreate);
   }
-  let button = document.getElementsByTagName("button");
+
+  let input = document.querySelectorAll("input");
+  let lable = document.querySelectorAll("lable");
+
   for (i = 0; i < answersNum; i++) {
+    input[i].type = "radio";
+    //crea un numero random che rapressenta il lable dove
+    //viene inserita una risposta
     let rand = Math.floor(Math.random() * answersNum);
-    console.log(usedButton);
+    // console.log(usedButton);
     if (!usedButton.includes(rand)) {
       usedButton.push(rand);
-      button[rand].innerText = questions[qc].incorrect_answers[i];
+      lable[rand].innerText = questions[qc].incorrect_answers[i];
     } else {
       i--;
     }
   }
   for (i = 0; i < answersNum; i++) {
-    console.log(i);
-    if (button[i].innerText === "undefined") {
-      button[i].innerText = questions[qc].correct_answer;
+    // console.log(i);
+    if (lable[i].innerText === "undefined") {
+      lable[i].innerText = questions[qc].correct_answer;
+      break;
     }
   }
-  console.log(button);
+  // console.log(button);
 }
+//TIMER
+
+function updateCountdown(qc) {
+  let seconds = parseInt(timerElement.textContent);
+
+  console.log(seconds);
+  if (seconds > 0) {
+    seconds--;
+    timerElement.textContent = seconds;
+  } else if (qc === 9) {
+    window.location.href = "../html/results.html";
+  } else {
+    risposte.innerHTML = "";
+    timerElement.textContent = 10;
+    qc++; //DA VEDERE
+    questionCounter++;
+    console.log("qc=" + qc);
+    loadQ(qc); // DA VEDERE
+    console.log(seconds);
+  }
+}
+
+// Aggiorna il countdown ogni secondo
+let countdownInterval = setInterval(function () {
+  updateCountdown(questionCounter);
+}, 1000);
