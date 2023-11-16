@@ -1,10 +1,8 @@
 let risposte = document.getElementById("risposte");
 let timerElement = document.getElementById("timer");
-
 let questionCounter = 0;
 let time = 60;
 let correctCounter = 0;
-
 const questions = [
   {
     category: "Science: Computers",
@@ -100,17 +98,19 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
 window.onload = function () {
   loadQ(questionCounter);
   risposte.addEventListener("click", (event) => {
+    let timerContainer = document.querySelector("svg");
+    let duplicate = timerContainer.cloneNode(true);
+    timerContainer.parentNode.replaceChild(duplicate, timerContainer);
+    timerElement = document.getElementById("timer");
     nextQuestion(event, questionCounter);
     correctACheck(event, questionCounter);
     updateCountdown(questionCounter);
     timerElement.textContent = 10;
   });
 };
-
 //controlla se una risposta è corretta
 function correctACheck(event, qc) {
   const isCorrect = event.target.innerHTML;
@@ -153,6 +153,7 @@ function nextQuestion(event, qc) {
   const isButton = event.target.nodeName;
   console.log(isButton);
   if (isButton === "LABLE") {
+    console.log(isButton);
     //controlla se viene effetivamente cliccato un bottone, dato che
     //l'eventListener è su tutta la div
     qc++;
@@ -180,10 +181,8 @@ function genButton(qc) {
     risposte.appendChild(lableCreate);
     lableCreate.appendChild(inputCreate);
   }
-
   let input = document.querySelectorAll("input");
   let lable = document.querySelectorAll("lable");
-
   for (i = 0; i < answersNum; i++) {
     input[i].type = "radio";
     //crea un numero random che rapressenta il lable dove
@@ -210,7 +209,8 @@ function genButton(qc) {
 
 function updateCountdown(qc) {
   let seconds = parseInt(timerElement.textContent);
-
+  localStorage.setItem("result", correctCounter);
+  console.log(localStorage.getItem("result"));
   console.log(seconds);
   if (seconds > 0) {
     seconds--;
@@ -220,11 +220,11 @@ function updateCountdown(qc) {
   } else {
     risposte.innerHTML = "";
     timerElement.textContent = 10;
-    qc++; //DA VEDERE
+    qc++;
     questionCounter++;
-    console.log("qc=" + qc);
-    loadQ(qc); // DA VEDERE
-    console.log(seconds);
+    // console.log("qc=" + qc);
+    loadQ(qc);
+    // console.log(seconds);
   }
 }
 

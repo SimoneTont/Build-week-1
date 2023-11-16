@@ -29,19 +29,14 @@ main{
 
 .list-inline {
     display: inline;
-    font-size: 40pt;
 }
 
-.list-inline li{
-    height:auto;
-
-}
 
 .fa-star:before {
     content: "\f005";
   }
   
-  .rating-list li i.yellow {
+  .rating-list li i.azure {
     color:#0ff ;
   }
   
@@ -52,6 +47,13 @@ main{
   .list-inline {
     list-style: none;
     overflow: hidden;
+  }
+  .list-inline>li {
+    list-style:none;
+    margin: 0 5px;
+    display:inline;
+    font-size: 50px;
+    cursor: pointer;
   }
 
   .list-inline>li {
@@ -82,7 +84,7 @@ textarea {
         outline: none;
   }
 
-  input{
+  button{
     background-color: #0ff;
     color: rgb(1, 1, 22);
     font-weight: bold;
@@ -91,5 +93,6 @@ textarea {
     padding-bottom: 0.8rem;
     padding-top: 0.8rem;
     margin: 1rem ;
+    cursor: pointer;
   }
 
