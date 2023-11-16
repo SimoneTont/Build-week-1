@@ -1,4 +1,4 @@
-const checkbox = document.getElementById('casellina');
+const checkbox = document.querySelector('input');
 const button = document.getElementById('bottone');
 
 button.disabled = true
