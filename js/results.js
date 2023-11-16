@@ -1,14 +1,21 @@
 //Link pulsante Rate Us a recensioni
-const LinkEpicode = function () {
+
+let btn = document.querySelector('button');
+ btn.addEventListener('click', feedbackPage);
+
+function feedbackPage() {
     window.location.href="../html/FeedbackPage.html";
   };
   
   //CHART
-  
-  var xValues = ["Wrong","Correct"];
-  var yValues = [sbagliati, correct];
+
   let correct = localStorage.getItem("result");
   let sbagliati = 10 - correct;
+
+  console.log(correct);
+
+  var xValues = ["Wrong","Correct"];
+  var yValues = [sbagliati, correct];
   var barColors = [ "#D20094","#00FFFF"];
   
   new Chart("myChart", {
@@ -93,7 +100,7 @@ const LinkEpicode = function () {
   
   risultatoConSlashNonCorretto();
   
-  let testoAlCentro = document.querySelector('#centerText')
+  let testoCentro = document.querySelector('#centerText')
   
   function testoAlCentro(){
     if(correct > sbagliati){
@@ -105,9 +112,9 @@ const LinkEpicode = function () {
       p2.innerText= "You passed the exam";
       p3.innerText="We'll send you the certificate in a few minutes. Check your email (including promotions / spam folder)";
   
-      testoAlCentro.appendChild(p1);
-      testoAlCentro.appendChild(p2);
-      testoAlCentro.appendChild(p3);
+      testoCentro.appendChild(p1);
+      testoCentro.appendChild(p2);
+      testoCentro.appendChild(p3);
     } else {
       let p1 = document.createElement('p');
       let p2 = document.createElement('p');
@@ -117,9 +124,9 @@ const LinkEpicode = function () {
       p2.innerText= "You failed the exam";
       p3.innerText= "Check-in with your teaching assistant for more informations on how to proceed from here.";
   
-      testoAlCentro.appendChild(p1);
-      testoAlCentro.appendChild(p2);
-      testoAlCentro.appendChild(p3);
+      testoCentro.appendChild(p1);
+      testoCentro.appendChild(p2);
+      testoCentro.appendChild(p3);
     }
   }
   
