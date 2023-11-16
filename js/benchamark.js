@@ -210,6 +210,7 @@ function genButton(qc) {
 function updateCountdown(qc) {
   let seconds = parseInt(timerElement.textContent);
   localStorage.setItem("result", correctCounter);
+  console.log(localStorage.getItem("result"));
   console.log(seconds);
   if (seconds > 0) {
     seconds--;
