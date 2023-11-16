@@ -37,7 +37,7 @@ img {
   stroke-width: 4px;
   stroke: #00ffff;
   fill: none;
-  animation: countdown 60s linear infinite forwards;
+  animation: countdown 10s linear infinite forwards;
 }
 
 svg circle#c3 {
