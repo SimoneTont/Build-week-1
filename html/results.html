@@ -21,26 +21,38 @@
         <div id="Contenitore">
             <div id="Corretto">
                 <h2>Correct</h2>
-                <p>66.7%</p>
-                <p class="TestoPiccolo">4/6 questions</p>
+                <p></p>
+                <p class="TestoPiccolo"></p>
             </div>
-            <div id="Risultato">
+
+            <!---CHART-->
+        <div id="chart">
+            <canvas id="myChart" width="300" height="300"></canvas>
+            <div id="centerText"></div>
+          </div>
+
+            <!-- <div id="Risultato">
                 <p id="Esame1">Congratulations!</p>
                 <p id="Esame2">You passed the exam</p>
                 <p id="Esame3">We will send you the certificate<br>in a few minutes.<br>Check your email
                     (including<br>promotions/spam folder)</p>
-            </div>
+            </div> -->
+
             <div id="Sbagliato">
                 <h2>Wrong</h2>
-                <p>33.3%</p>
-                <p class="TestoPiccolo">4/6 questions</p>
+                <p></p>
+                <p class="TestoPiccolo"></p>
             </div>
         </div>
         <div id="Bottone">
-            <button onclick="LinkEpicode()">RATE US</button>
+            <button>RATE US</button>
         </div>
     </main>
     <script src="../js/results.js"></script>
+    <script src="path/to/chartjs/dist/chart.umd.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-doughnutlabel"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-doughnutlabel@1.0.2/dist/chartjs-plugin-doughnutlabel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </body>
 
 </html>
