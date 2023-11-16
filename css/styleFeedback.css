@@ -26,17 +26,15 @@ main{
     text-align: center;
 }
 
+
 .list-inline {
     display: inline;
-
+    font-size: 40pt;
 }
+
 .list-inline li{
-    width: 50px;
     height:auto;
-}
 
-.rating-list{
-    display: inline;
 }
 
 .fa-star:before {
@@ -50,17 +48,17 @@ main{
   .rating-list li i.gray {
     color: #bbb;
   }
-  
+
   .list-inline {
     list-style: none;
-    padding: 0;
-    margin: 0;
     overflow: hidden;
   }
-  .list-inline>li {
-    float: left;
-  }
 
+  .list-inline>li {
+    list-style:none;
+    margin: 0 5px;
+    display:inline;
+  }
 
 section{
     padding: 1.8rem;
