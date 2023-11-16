@@ -33,7 +33,6 @@ main{
 .rating-list{
     display: inline;
 }
-
 .fa-star:before {
     content: "\f005";
   }
@@ -45,11 +44,8 @@ main{
   .rating-list li i.gray {
     color: #bbb;
   }
-  
   .list-inline {
     list-style: none;
-    padding: 0;
-    margin: 0;
     overflow: hidden;
   }
   .list-inline>li {
@@ -59,7 +55,20 @@ main{
     font-size: 50px;
     cursor: pointer;
   }
-
+  
+  .rating-list li {
+    padding: 0px;
+  }
+  
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+  }
 
 section{
     padding: 1.8rem;
