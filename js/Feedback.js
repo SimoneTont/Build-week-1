@@ -1,3 +1,4 @@
+//Link al sito Epicode quando clicchi il pulsante
 const LinkHomeEpicode = function ()
 {
     window.open("https://epicode.com/it", '_blank').focus();
@@ -38,3 +39,14 @@ $(function() {
       });
     }
 })
+//Effetto glow sul bottone quando passi sopra
+const  GlowingButton = function()
+{
+    const button = document.getElementsByTagName('button')
+    button[0].addEventListener("mousemove", (event) => {
+        event=button[0].classList.add("Glowing")
+    })
+    button[0].addEventListener("mouseleave", (event) => {
+        event=button[0].classList.remove("Glowing")
+    })
+}

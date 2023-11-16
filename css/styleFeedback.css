@@ -104,4 +104,8 @@ textarea {
     margin: 1rem ;
     cursor: pointer;
   }
-
+.Glowing
+{
+    box-shadow: 3px 3px 15px #00ffff;
+    border-color: #0ff;
+}
