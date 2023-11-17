@@ -116,6 +116,7 @@ window.onload = function () {
     nextQuestion(event, questionCounter);
     correctACheck(event, questionCounter);
     updateCountdown(questionCounter);
+    Contatore(questionCounter)
 
     // \/ viene dichiarato qua per la stessa ragione di timerContainer
     timerElement.textContent = 10;
@@ -256,3 +257,12 @@ function updateCountdown(qc) {
 let countdownInterval = setInterval(function () {
   updateCountdown(questionCounter);
 }, 1000);
+//Contatore domande del benchmark
+function Contatore (questionCounter)
+{
+  const pCounter= document.getElementById('Counter')
+  console.log(pCounter)
+  let dataArr = pCounter.innerText.split('/')
+  console.log(dataArr)
+  pCounter.innerHTML = "Question "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";
+}

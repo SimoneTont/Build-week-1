@@ -97,3 +97,13 @@ button:hover {
   text-align: center;
 }
 /*TRACKER*/
+#Counter
+{
+  margin-top: 15%;
+  text-align: center;
+  color: white;
+}
+#Counter span
+{
+  color: rgb(209, 0, 146);
+}
