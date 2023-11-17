@@ -1,6 +1,5 @@
-html{
+html {
   min-width: 40rem;
-
 }
 body {
   background-image: url("../assets/bg.jpg");
@@ -29,6 +28,92 @@ h1 {
   font-weight: bolder;
 }
 /*main*/
+div {
+  text-align: center;
+}
+/*CHART*/
+#Contenitore {
+  margin: 4rem;
+}
+#myChart {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+}
+/* PERCENTUALI */
+#Corretto,
+#chart,
+#Sbagliato {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#Corretto,
+#Sbagliato {
+  margin: 2rem;
+  width: auto; /* Imposta la larghezza su "auto" per adattarsi al contenuto */
+}
+
+/*👉CHART TEXT👈*/
+#centerText {
+  /*👉  vertical-align: middle;
+  text-align: center;*/
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #000;
+  /* pointer-events: none; */
+}
+
+/*👉#centerText:first-child {
+  font-weight: bold;
+  color: white;
+}👈*/
+
+#centerText:nth-child(1) {
+  font-weight: bold;
+  color: #00ffff;
+}
+
+#centerText p {
+  padding: 0 65px;
+  padding-left: 75px;
+}
+#centerText p:nth-child(1) {
+  font-weight: bold;
+  color: white;
+}
+#centerText p:nth-child(2) {
+  color: #00ffff;
+  font-weight: bold;
+  font-size: 20px;
+}
+#centerText p:nth-child(3) {
+  color: white;
+  font-size: 15px;
+  margin: 5px 165px;
+}
+/*👉RATE US BUTTON👈*/
+#Bottone button:hover {
+  box-shadow: 0px 0px 20px -7px rgb(0, 110, 255);
+  /* 👉da mettere apposto👈 */
+}
+button {
+  background-color: transparent;
+  border: 3px solid white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: white;
+  font-size: larger;
+  font-weight: bolder;
+  box-shadow: none;
+}
 /*div Corretto*/
 #Corretto {
   display: inline-block;
@@ -86,91 +171,3 @@ h1 {
     margin-top: 2rem;
     font-size: smaller;
 } */
-/*Button*/
-button {
-  background-color: transparent;
-  border: 2px solid white;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  color: white;
-  font-size: larger;
-  font-weight: 500;
-  box-shadow: none;
-  font-family: 'Outfit', sans-serif;
-}
-
-/*CHART*/
-
-#Contenitore {
-  margin: 4rem;
-}
-
-#Corretto,
-#chart,
-#Sbagliato {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#Corretto,
-#Sbagliato {
-  margin: 2rem;
-  width: auto; /* Imposta la larghezza su "auto" per adattarsi al contenuto */
-}
-
-#myChart {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-}
-
-#centerText {
-  /*👉  vertical-align: middle;
-  text-align: center;*/
-  position: absolute;
-  top: 400px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  color: #000;
-  width: 40rem;
-  /* pointer-events: none; */
-}
-
-#centerText:first-child {
-  font-weight: bold;
-  color: white;
-}
-
-#centerText:nth-child(1) {
-  font-weight: bold;
-  color: #00ffff;
-}
-#Bottone button:hover {
-  box-shadow: 0px 0px 20px -7px rgb(0, 110, 255);
-  /* 👉da mettere apposto👈 */
-}
-div {
-  text-align: center;
-}
-#centerText p {
-  padding: 0 65px;
-}
-#centerText p:nth-child(1) {
-  font-weight: bold;
-  color: white;
-}
-#centerText p:nth-child(2) {
-  color: #00ffff;
-  font-weight: bold;
-  font-size: 20px;
-}
-#centerText p:nth-child(3) {
-  color: white;
-  font-size: 15px;
-  margin: 05px 165px;
-}
