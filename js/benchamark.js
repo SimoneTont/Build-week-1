@@ -260,9 +260,6 @@ let countdownInterval = setInterval(function () {
 //Contatore domande del benchmark
 function Contatore (questionCounter)
 {
-  const pCounter= document.getElementById('Counter')
-  console.log(pCounter)
-  let dataArr = pCounter.innerText.split('/')
-  console.log(dataArr)
-  pCounter.innerHTML = "Question "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";
+  const pCounter= document.getElementById('Counter')//paragrafo del counter
+  pCounter.innerHTML = "Question "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";//nuovo paragrafo con span
 }
