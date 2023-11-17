@@ -1,4 +1,4 @@
-//Link pulsante Rate Us a recensioni
+// Bottone che al click porta alla feedback page
 let btn = document.querySelector("button");
 btn.addEventListener("click", feedbackPage);
 
@@ -6,17 +6,20 @@ function feedbackPage() {
   window.location.href = "../html/FeedbackPage.html";
 }
 
-//CHART
-
+// Il valore "result" del localstorage viene assegnato alla variabile "correct"
 let correct = localStorage.getItem("result");
 let sbagliati = 10 - correct;
 
 console.log(correct);
 
+// Definisce valori sull'asse x e y
 var xValues = ["Wrong", "Correct"];
 var yValues = [sbagliati, correct];
+
+// Definisce i colori delle barre nel grafico a ciambella
 var barColors = ["#D20094", "#00FFFF"];
 
+// Creazione grafico a ciambella con la libreria charts.js
 new Chart("myChart", {
   type: "doughnut",
   data: {
@@ -68,18 +71,23 @@ new Chart("myChart", {
   },
 });
 
+// Seleziona l'elemento HTML con id "Corretto" e il paragrafo al suo interno
 let risultatoCorretto = document.querySelector("#Corretto p");
+// Aggiorna il testo dell'elemento HTML con la percentuale di risposte corrette
 function testoCorretti() {
   risultatoCorretto.innerText = `${(correct / 10) * 100}%`;
 }
-
+// Chiama la funzione per aggiornare il testo
 testoCorretti();
 
+// Seleziona l'elemento HTML con id "Sbagliato" e il paragrafo al suo interno
 let risultatoSbagliato = document.querySelector("#Sbagliato p");
+// Aggiorna il testo dell'elemento HTML con la percentuale di risposte sbagliate
 function testoSbagliato() {
   risultatoSbagliato.innerText = `${(sbagliati / 10) * 100}%`;
 }
 
+// Chiama la funzione per aggiornare il testo
 testoSbagliato();
 
 let fraseCorretto = document.querySelector("#Corretto .TestoPiccolo");
@@ -100,6 +108,7 @@ risultatoConSlashNonCorretto();
 
 let testoCentro = document.querySelector("#centerText");
 
+// Utilizzo di if/else per la stampa finale del risultato a seconda della percentuale di risposte errate e corrette
 function testoAlCentro() {
   if (correct > sbagliati) {
     let p1 = document.createElement("p");

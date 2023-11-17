@@ -98,7 +98,7 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-//funzione che parte al cariamento della pagina
+//funzione che parte al caricamento della pagina
 window.onload = function () {
   loadQ(questionCounter);
 
@@ -261,5 +261,5 @@ let countdownInterval = setInterval(function () {
 function Contatore (questionCounter)
 {
   const pCounter= document.getElementById('Counter')//paragrafo del counter
-  pCounter.innerHTML = "Question "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";//nuovo paragrafo con span
+  pCounter.innerHTML = "QUESTION "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";//nuovo paragrafo con span
 }
