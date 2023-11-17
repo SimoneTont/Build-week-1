@@ -6,37 +6,24 @@ const LinkHomeEpicode = function ()
 
 $(function() {
 
-    var current_star_statusses = []; //Array posiziono stelle
-
     star_elements = $('.fa-star').parent(); //Elementi stella
     
-    star_elements.find(".fa-star").each(function(i, elem) {
-      current_star_statusses.push($(elem).hasClass('azure'));
-    }); // Salva posizione stelle azzurre
-    
-    star_elements.find(".fa-star").mouseenter(changeRatingStars);
-    star_elements.find(".fa-star").mouseleave(resetRatingStars);
+    star_elements.find(".fa-star").mouseenter(changeRatingStars); //Quando passi con il mouse attiva la funzione changeRatingStars
 
-    //Changes the rating star colors when hovering over it.
+    //Colora di azzurro quando ci passi sopra
     function changeRatingStars() {
-      // Current star hovered
+      // Stella attuale
       var star = $(this);
     
-      // Removes all colors first from all stars
+      // Rimuovi le classi del colore
       $('.fa-star').removeClass('gray').removeClass('azure');
     
-      // Makes the current hovered star azure
+      // Aggiunge la classe che la rende azzurra
       star.addClass('azure');
     
-      // Makes the previous stars azure and the next stars gray
+      // Rende tutte le stelle precedenti azzurre e tutte quelle successive grigie (Tramite classi CSS)
       star.parent().prevAll().children('.fa-star').addClass('azure');
       star.parent().nextAll().children('.fa-star').addClass('gray');
-    }
-    /*Resets the rating star colors when not hovered anymore.*/
-    function resetRatingStars() {
-      star_elements.each(function(i, elem) {
-        $(elem).removeClass('azure').removeClass('gray').addClass(current_star_statusses[i] ? 'azure' : 'gray');
-      });
     }
 })
 //Effetto glow sul bottone quando passi sopra
@@ -47,7 +34,7 @@ const  GlowingButton = function()
     button[0].addEventListener("mousemove", (event) => {
         event=button[0].classList.add("Glowing")
     })
-    // 
+    // Quando il mouse si sposta da button, rimuovi class Glowing
     button[0].addEventListener("mouseleave", (event) => {
         event=button[0].classList.remove("Glowing")
     })
