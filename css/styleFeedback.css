@@ -1,3 +1,4 @@
+/* IMPOSTAZIONI GENERALI */
 
 body{
     background-image: url("../assets/bg.jpg");
@@ -8,6 +9,8 @@ body{
    background-size: cover;
 }
 
+/* TIPOGRAFIA */
+
 h1{
     font-family: 'Outfit', sans-serif;
     font-size: 60px;
@@ -16,6 +19,8 @@ h1{
 p{
     font-family: 'Inter', sans-serif;
 }
+
+/* Layout generale header e main */
 
 header img{
     height: 4rem;
