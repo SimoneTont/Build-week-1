@@ -11,6 +11,7 @@ body {
 
 /*HEADER*/
 
+/*È il logo*/
 img {
   height: 4rem;
   width: auto;
@@ -22,6 +23,7 @@ img {
   text-align: right;
 }
 
+/*contenitore div del timer countdown*/
 #countdown {
   margin: 10px;
   height: 160px;
@@ -30,6 +32,7 @@ img {
   margin-right: 5rem;
 }
 
+/*È il cerchio blu animato del countdown*/
 #countdown svg circle#c2 {
   stroke-dasharray: 113px;
   stroke-dashoffset: 113px;
@@ -40,11 +43,13 @@ img {
   animation: countdown 10s linear infinite forwards;
 }
 
+/*È il cerchio bianco fermo sotto il cerchio blu*/
 svg circle#c3 {
   stroke: #ffffff;
   opacity: 0.3;
 }
 
+/*Si occupa dello stile del numero all'interno del counter*/
 svg text {
   font-family: sans-serif;
   fill: white;
@@ -54,6 +59,7 @@ svg text {
   font-size: 1rem;
 }
 
+/*si occupa dell'animazione del countdown del cerchio*/
 @keyframes countdown {
   from {
     stroke-dashoffset: 0px;
@@ -62,20 +68,25 @@ svg text {
     stroke-dashoffset: -113px;
   }
 }
+
 /*MAIN*/
 
 /*DOMANDA*/
 
 #domanda {
-  margin: 2rem;
+  margin: 4rem;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: white;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*RISPOSTE*/
 
+/*Proprietà del button quando statico*/
 button {
   text-align: center;
   color: rgb(253, 249, 249);
@@ -88,22 +99,23 @@ button {
   border-color: white;
 }
 
+/*Proprietà del bottone quando ci passo sopra il mouse*/
 button:hover {
   background-color: rgb(209, 0, 146);
   border-color: rgba(241, 241, 241, 0.5);
 }
 
+/*Per allineare i bottoni all'interno di div #rispsote*/
 #risposte {
   text-align: center;
 }
+
 /*TRACKER*/
-#Counter
-{
+#Counter {
   margin-top: 15%;
   text-align: center;
   color: white;
 }
-#Counter span /*Span per cambiare colore a /10 */
-{
+#Counter span /*Span per cambiare colore a /10 */ {
   color: rgb(209, 0, 146);
 }
