@@ -34,7 +34,7 @@ const  GlowingButton = function()
     button[0].addEventListener("mousemove", (event) => {
         event=button[0].classList.add("Glowing")
     })
-    // 
+    // Quando il mouse si sposta da button, rimuovi class Glowing
     button[0].addEventListener("mouseleave", (event) => {
         event=button[0].classList.remove("Glowing")
     })
