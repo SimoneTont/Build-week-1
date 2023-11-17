@@ -103,7 +103,7 @@ button:hover {
   text-align: center;
   color: white;
 }
-#Counter span
+#Counter span /*Span per cambiare colore a /10 */
 {
   color: rgb(209, 0, 146);
 }
