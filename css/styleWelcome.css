@@ -1,3 +1,5 @@
+/* IMPOSTAZIONI GENERALI PAGINA */
+
 body {
   background-image: url("../assets/bg.jpg");
   background-color: #cccccc;
@@ -8,14 +10,20 @@ body {
   color: #cccccc;
 }
 
+/* Resizing immagini */
+
 img {
   height: 4rem;
   width: auto;
 }
 
+/* Resizing container rispetto al body */
+
 .container {
   max-width: 80%;
 }
+
+/* TIPOGRAFIA */
 
 h1 {
   font-size: 60px;
@@ -43,6 +51,8 @@ h2 {
   margin-bottom: 0.4em;
 }
 
+/* layout ul */
+
 ul {
   list-style: disc;
   font-family: "Inter", sans-serif;
@@ -60,6 +70,8 @@ li {
 ul span {
   font-weight: 800;
 }
+
+/* Layout form e checkbox */
 
 .form-welcome {
   display: inline-block;
