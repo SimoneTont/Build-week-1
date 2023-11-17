@@ -170,7 +170,7 @@ function nextQuestion(event, qc) {
   console.log(isButton);
   //controlla se viene effetivamente cliccato un label, dato che
   //l'eventListener è su tutta la div
-  if (isButton === "LABEL") {
+  if (isButton === "BUTTON") {
     console.log(isButton);
     qc++;
     questionCounter++;
@@ -191,18 +191,14 @@ function genButton(qc) {
 
   for (i = 0; i < answersNum; i++) {
     //ciclo per creare tanti bottoni quante risposte
-    let inputCreate = document.createElement("input");
-    let labelCreate = document.createElement("label");
+    let buttonCreate = document.createElement("button");
     // inputCreate.id = `questionInput${i}`;
-    risposte.appendChild(labelCreate);
-    labelCreate.appendChild(inputCreate);
+    risposte.appendChild(buttonCreate);
   }
 
-  let input = document.querySelectorAll("input");
-  let lable = document.querySelectorAll("label");
+  let button = document.querySelectorAll("button");
   for (i = 0; i < answersNum; i++) {
-    input[i].type = "radio";
-    console.log(input[i]);
+    console.log(button[i]);
     //crea un numero random tra 0 ed il numero di risposte,
     //che rapressenta il lable dove viene inserita una risposta
     let rand = Math.floor(Math.random() * answersNum);
@@ -210,7 +206,7 @@ function genButton(qc) {
     // se il numero random non è incluso nell'array useButton
     if (!usedButton.includes(rand)) {
       usedButton.push(rand);
-      lable[rand].innerText += questions[qc].incorrect_answers[i]; //assegna le risposte sbagliate in un lable a caso
+      button[rand].innerText += questions[qc].incorrect_answers[i]; //assegna le risposte sbagliate in un lable a caso
     } else {
       //se il numero random generato è gia inserito nell'array ripeti il ciclo senza
       //incrementare
@@ -220,8 +216,8 @@ function genButton(qc) {
   for (i = 0; i < answersNum; i++) {
     // console.log(i);
     //controlla i lable e assegna la risposta correta all'ultimo undefined rimasto
-    if (lable[i].innerText === "undefined") {
-      lable[i].innerText = questions[qc].correct_answer;
+    if (button[i].innerText === "undefined") {
+      button[i].innerText = questions[qc].correct_answer;
       break;
     }
   }
@@ -235,13 +231,13 @@ function updateCountdown(qc) {
   // \/ per accederci da un altro .js
   localStorage.setItem("result", correctCounter);
 
-  // console.log(localStorage.getItem("result"));
-  // console.log(seconds);
+  //console.log(localStorage.getItem("result"));
+  //console.log(seconds);
   if (seconds > 1) {
     seconds--;
     timerElement.textContent = seconds;
   } else if (qc === 9) {
-    // se il contatore di domande arriva al limite apri result
+    //se il contatore di domande arriva al limite apri result
     window.location.href = "../html/results.html";
   } else {
     //se secondi arriva al limite incrementa il contatore delle domande
