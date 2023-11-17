@@ -49,13 +49,11 @@ div {
   display: inline-block;
   vertical-align: middle;
 }
-
 #Corretto,
 #Sbagliato {
   margin: 2rem;
   width: auto; /* Imposta la larghezza su "auto" per adattarsi al contenuto */
 }
-
 /*👉CHART TEXT👈*/
 #centerText {
   /*👉  vertical-align: middle;
@@ -68,17 +66,14 @@ div {
   color: #000;
   /* pointer-events: none; */
 }
-
 /*👉#centerText:first-child {
   font-weight: bold;
   color: white;
 }👈*/
-
 #centerText:nth-child(1) {
   font-weight: bold;
   color: #00ffff;
 }
-
 #centerText p {
   padding: 0 65px;
   padding-left: 75px;
@@ -101,7 +96,6 @@ div {
 /*👉RATE US BUTTON👈*/
 #Bottone button:hover {
   box-shadow: 0px 0px 20px -7px rgb(0, 110, 255);
-  /* 👉da mettere apposto👈 */
 }
 button {
   background-color: transparent;
