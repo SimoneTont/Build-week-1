@@ -115,7 +115,9 @@ button:hover {
   margin-top: 15%;
   text-align: center;
   color: white;
+  letter-spacing: 2px;
 }
 #Counter span /*Span per cambiare colore a /10 */ {
   color: rgb(209, 0, 146);
+  letter-spacing: 2px;
 }

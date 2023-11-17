@@ -13,7 +13,8 @@ body {
 /*header*/
 header h1 {
   text-align: center;
-  font-size: xx-large;
+  font-size: 3rem;
+  margin-top: 3rem;
 }
 header p {
   text-align: center;
@@ -59,7 +60,7 @@ div {
   /*👉  vertical-align: middle;
   text-align: center;*/
   position: absolute;
-  top: 400px;
+  top: 460px;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
@@ -81,17 +82,22 @@ div {
 #centerText p:nth-child(1) {
   font-weight: bold;
   color: white;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 #centerText p:nth-child(2) {
   color: #00ffff;
   font-weight: bold;
   font-size: 20px;
+  margin-bottom: 1rem;
 }
 #centerText p:nth-child(3) {
-  color: white;
-  font-size: 15px;
-  margin: 5px 165px;
+  color: #cccccc;
+  font-size: 14px;
+  /* margin: 5px 165px px; */
   width: 13rem;
+  font-weight: 300;
+  line-height: 1rem;
 }
 /*👉RATE US BUTTON👈*/
 #Bottone button:hover {
@@ -112,9 +118,12 @@ button {
 /*div Corretto*/
 #Corretto {
   display: inline-block;
+  text-align: left;
 }
 #Corretto .TestoPiccolo {
   font-size: small;
+  font-weight: 300;
+  margin: 0.3rem 0.3rem 0.3rem 0rem;
 }
 #Corretto h2 {
   font-size: xx-large;
@@ -128,9 +137,12 @@ button {
 #Sbagliato {
   display: inline-block;
   opacity: 70%;
+  text-align: right;
 }
 #Sbagliato .TestoPiccolo {
   font-size: small;
+  font-weight: 300;
+  margin: 0.3rem 0rem 0.3rem 0.3rem;
 }
 #Sbagliato h2 {
   font-size: xx-large;

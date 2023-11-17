@@ -227,7 +227,7 @@ function genButton(qc) {
 //TIMER
 
 function updateCountdown(qc) {
-  let seconds = 10000000; //parseInt(timerElement.textContent);
+  let seconds = /*10000000;*/ parseInt(timerElement.textContent);
   // \/ salva correctCounter nello storage locale del browser
   // \/ per accederci da un altro .js
   localStorage.setItem("result", correctCounter);
@@ -249,6 +249,7 @@ function updateCountdown(qc) {
     questionCounter++;
     //console.log("qc=" + qc);
     loadQ(qc);
+    Contatore(questionCounter);
     //console.log(seconds);
   }
 }
@@ -261,5 +262,5 @@ let countdownInterval = setInterval(function () {
 function Contatore (questionCounter)
 {
   const pCounter= document.getElementById('Counter')//paragrafo del counter
-  pCounter.innerHTML = "QUESTION "+(questionCounter+1)+ "<span>"+"/"+10+"</span>";//nuovo paragrafo con span
+  pCounter.innerHTML = "QUESTION "+(questionCounter+1)+ "<span>"+" / "+10+"</span>";//nuovo paragrafo con span
 }
