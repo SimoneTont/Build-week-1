@@ -147,7 +147,7 @@ function loadQ(qc) {
 // function timer(qc) {
 //   if (time > 0) {
 //     timerDiv.innerText = time;
-//     time--;
+
 //     countDown = setTimeout(function () {
 //       timer(qc);
 //     }, 1000);
