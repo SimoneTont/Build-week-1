@@ -21,3 +21,18 @@ button.disabled = true
 
     // la funzionalità è che quando la casella di controllo è selezionata, 
     //il pulsante viene abilitato e quando è deselezionata, il pulsante diventa disabilitato.
+
+//Salva la selezione dell'utente per quante domande vuole
+    function saveUserChoice() {
+      let selectElement = document.getElementById("userChoice");
+      let selectedValue = selectElement.value;
+      localStorage.setItem("userChoice", selectedValue);
+    }
+
+    //Salva la selezione dell'utente per quale difficoltà vuole
+    function saveUserChoice1() {
+      var selectedText = document.getElementById("userChoice1").options[document.getElementById("userChoice1").selectedIndex].innerText;
+      console.log("Testo salvato:", selectedText);
+
+      localStorage.setItem("userChoiceText", selectedText);
+    }

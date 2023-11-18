@@ -1,5 +1,7 @@
 let risposte = document.getElementById("risposte");
 let timerElement = document.getElementById("timer");
+var savedUserChoice = localStorage.getItem("userChoice");
+var savedUserChoiceText = localStorage.getItem("userChoiceText");
 let questionCounter = 0;
 let time = 60;
 let correctCounter = 0;
@@ -97,7 +99,198 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question:
+      "In the programming language &quot;Python&quot;, which of these statements would display the string &quot;Hello World&quot; correctly?",
+    correct_answer: "print(&quot;Hello World&quot;)",
+    incorrect_answers: [
+      "console.log(&quot;Hello World&quot;)",
+      "echo &quot;Hello World&quot;",
+      "printf(&quot;Hello World&quot;)",
+    ],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "On which computer hardware device is the BIOS chip located?",
+    correct_answer: "Motherboard",
+    incorrect_answers: [
+      "Hard Disk Drive",
+      "Central Processing Unit",
+      "Graphics Processing Unit",
+    ],
+  },
+  {
+    type: "boolean",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question:
+      "A Boolean value of &quot;0&quot; represents which of these words?",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "When did the online streaming service &quot;Mixer&quot; launch?",
+    correct_answer: "2016",
+    incorrect_answers: ["2013", "2009", "2011"],
+  },
+  {
+    type: "boolean",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "MacOS is based on Linux.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question:
+      "What is the correct term for the metal object in between the CPU and the CPU fan within a computer system?",
+    correct_answer: "Heat Sink",
+    incorrect_answers: ["CPU Vent", "Temperature Decipator", "Heat Vent"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "In computing terms, typically what does CLI stand for?",
+    correct_answer: "Command Line Interface",
+    incorrect_answers: [
+      "Common Language Input",
+      "Control Line Interface",
+      "Common Language Interface",
+    ],
+  },
+  {
+    type: "boolean",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "The open source program Redis is a relational database server.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question: "How many bytes are in a single Kibibyte?",
+    correct_answer: "1024",
+    incorrect_answers: ["2400", "1000", "1240"],
+  },
+  {
+    type: "multiple",
+    difficulty: "medium",
+    category: "Science: Computers",
+    question:
+      "Moore&#039;s law originally stated that the number of transistors on a microprocessor chip would double every...",
+    correct_answer: "Year",
+    incorrect_answers: ["Four Years", "Two Years", "Eight Years"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "What major programming language does Unreal Engine 4 use?",
+    correct_answer: "C++",
+    incorrect_answers: ["Assembly", "C#", "ECMAScript"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Who is the founder of Palantir?",
+    correct_answer: "Peter Thiel",
+    incorrect_answers: ["Mark Zuckerberg", "Marc Benioff", "Jack Dorsey"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "Which data structure does FILO apply to?",
+    correct_answer: "Stack",
+    incorrect_answers: ["Queue", "Heap", "Tree"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "Which of these Cherry MX mechanical keyboard switches is both tactile and clicky?",
+    correct_answer: "Cherry MX Blue",
+    incorrect_answers: ["Cherry MX Black", "Cherry MX Red", "Cherry MX Brown"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "Which of these names was an actual codename for a cancelled Microsoft project?",
+    correct_answer: "Neptune",
+    incorrect_answers: ["Enceladus", "Pollux", "Saturn"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "What type of sound chip does the Super Nintendo Entertainment System (SNES) have?",
+    correct_answer: "ADPCM Sampler",
+    incorrect_answers: [
+      "FM Synthesizer",
+      "Programmable Sound Generator (PSG)",
+      "PCM Sampler",
+    ],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "Which of the following computer components can be built using only NAND gates?",
+    correct_answer: "ALU",
+    incorrect_answers: ["CPU", "RAM", "Register"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question: "What was the name of the first Bulgarian personal computer?",
+    correct_answer: "IMKO-1",
+    incorrect_answers: ["Pravetz 82", "Pravetz 8D", "IZOT 1030"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "Released in 2001, the first edition of Apple&#039;s Mac OS X operating system (version 10.0) was given what animal code name?",
+    correct_answer: "Cheetah",
+    incorrect_answers: ["Puma", "Tiger", "Leopard"],
+  },
+  {
+    type: "multiple",
+    difficulty: "hard",
+    category: "Science: Computers",
+    question:
+      "What is the name of the process that sends one qubit of information using two bits of classical information?",
+    correct_answer: "Quantum Teleportation",
+    incorrect_answers: [
+      "Super Dense Coding",
+      "Quantum Entanglement",
+      "Quantum Programming",
+    ],
+  },
 ];
+
 //funzione che parte al caricamento della pagina
 window.onload = function () {
   loadQ(questionCounter);
@@ -116,22 +309,26 @@ window.onload = function () {
     nextQuestion(event, questionCounter);
     correctACheck(event, questionCounter);
     updateCountdown(questionCounter);
-    Contatore(questionCounter)
+    Contatore(questionCounter);
 
     // \/ viene dichiarato qua per la stessa ragione di timerContainer
     timerElement.textContent = 10;
   });
 };
+
+Contatore(questionCounter);
+
 //controlla se una risposta è corretta
 function correctACheck(event, qc) {
-  //assegna il testo del elemento che è stato cliccato a isCorrect
-  const isCorrect = event.target.innerHTML;
-  // console.log(qc);
-  // console.log(isCorrect);
-  // se isCorrect è uguale alla proprieta correct_answer aumenta correctCounter di 1
-  console.log(correctCounter);
+  const isCorrect = event.target.innerText; // Modifica per ottenere il testo del bottone
+  const difficulty = savedUserChoiceText.toLowerCase(); // Modalità di difficoltà selezionata 
 
-  if (isCorrect === questions[qc - 1].correct_answer) {
+  //Filtra l'array questions per trovare le domande con la difficoltà selezionata dall'utente in Welcome
+  const currentQuestion = questions.filter(
+    (q) => q.difficulty === difficulty //verifica se la difficoltà della domanda q è uguale al valore della variabile difficulty
+  )[qc - 1]; //sottraendo 1 selezioni l'elemento corrispondente nella posizione desiderata. Ricordiamoci che l'indice parte da 0.
+
+  if (isCorrect === currentQuestion.correct_answer) {
     correctCounter++;
     console.log(correctCounter);
   }
@@ -140,10 +337,22 @@ function correctACheck(event, qc) {
 //inserice domanda per domanda all'interno del suo div e chiama la
 //funzione per generare le risposte ogni volta che viene chiamato
 function loadQ(qc) {
-  let singleQuestion = questions[qc].question;
-  document.querySelector("#domanda").innerHTML = `<p>${singleQuestion}</p>`;
-  genButton(qc);
+  // Filtra le domande in base alla difficoltà selezionata dall'utente
+  const filteredQuestions = questions.filter(
+    (question) => question.difficulty.toLowerCase() === savedUserChoiceText.toLowerCase()
+  );
+
+  // Se ci sono domande disponibili con la difficoltà selezionata, carica la domanda
+  if (filteredQuestions.length > 0 && qc < filteredQuestions.length) {
+    let singleQuestion = filteredQuestions[qc].question;
+    document.querySelector("#domanda").innerHTML = `<p>${singleQuestion}</p>`;
+    genButton(qc, filteredQuestions);
+  } else {
+    // Se non ci sono più domande disponibili, reindirizza all pagina dei risultati
+    window.location.href = "../html/results.html";
+  }
 }
+
 
 // function timer(qc) {
 //   if (time > 0) {
@@ -164,6 +373,19 @@ function loadQ(qc) {
 //     }, 1000);
 //   }
 // }
+
+// document.addEventListener("DOMContentLoaded", function() {
+// var selectElement = document.getElementById("userChoice");
+
+console.log(savedUserChoiceText);//per controllare
+
+// if (savedUserChoice) {
+//   selectElement.value = savedUserChoice;
+// }
+console.log(savedUserChoice);//per controllare
+// console.log(selectElement);
+// });
+
 //funzione per passare alla domanda succesiva al click
 function nextQuestion(event, qc) {
   // assegna il "tipo"(nome del nodo) dell'elemento cliccato
@@ -175,7 +397,7 @@ function nextQuestion(event, qc) {
     console.log(isButton);
     qc++;
     questionCounter++;
-    if (qc === 10) {
+    if (qc === Number(savedUserChoice)) {
       window.location.href = "../html/results.html";
     } else {
       console.log(qc);
@@ -186,48 +408,32 @@ function nextQuestion(event, qc) {
 }
 //genere un tutti i bottoni e inserice le risposte in dei
 //bottoni scelti casualmente
-function genButton(qc) {
-  let usedButton = [];
-  let answersNum = questions[qc].incorrect_answers.length + 1; //il numero di bottoni da creare = risposteSbagliate+1(rispostaCorretta)
 
-  for (i = 0; i < answersNum; i++) {
-    //ciclo per creare tanti bottoni quante risposte
+function genButton(qc, filteredQuestions) {
+  let answersNum = filteredQuestions[qc].incorrect_answers.length + 1;
+
+  let buttonsContainer = document.getElementById("risposte");// Calcola il numero totale di risposte
+  buttonsContainer.innerHTML = ""; // Pulisce i pulsanti precedenti, altrimenti li aggiunge a quelli precedenti
+
+  let answers = [...filteredQuestions[qc].incorrect_answers];// Crea un array contenente tutte le risposte, inclusa quella corretta
+  answers.push(filteredQuestions[qc].correct_answer);
+
+  
+  answers = answers.sort(() => Math.random() - 0.5);// Mischia le risposte in modo casuale
+
+  for (let i = 0; i < answersNum; i++) {// Itera attraverso tutte le risposte e crea un bottone per ciascuna
     let buttonCreate = document.createElement("button");
-    // inputCreate.id = `questionInput${i}`;
-    risposte.appendChild(buttonCreate);
+    buttonCreate.innerText = answers[i];
+    buttonsContainer.appendChild(buttonCreate);
   }
-
-  let button = document.querySelectorAll("button");
-  for (i = 0; i < answersNum; i++) {
-    console.log(button[i]);
-    //crea un numero random tra 0 ed il numero di risposte,
-    //che rapressenta il lable dove viene inserita una risposta
-    let rand = Math.floor(Math.random() * answersNum);
-    //console.log(usedButton);
-    // se il numero random non è incluso nell'array useButton
-    if (!usedButton.includes(rand)) {
-      usedButton.push(rand);
-      button[rand].innerText += questions[qc].incorrect_answers[i]; //assegna le risposte sbagliate in un lable a caso
-    } else {
-      //se il numero random generato è gia inserito nell'array ripeti il ciclo senza
-      //incrementare
-      i--;
-    }
-  }
-  for (i = 0; i < answersNum; i++) {
-    // console.log(i);
-    //controlla i lable e assegna la risposta correta all'ultimo undefined rimasto
-    if (button[i].innerText === "undefined") {
-      button[i].innerText = questions[qc].correct_answer;
-      break;
-    }
-  }
-  // console.log(button);
 }
+
+
+
 //TIMER
 
 function updateCountdown(qc) {
-  let seconds = /*10000000;*/ parseInt(timerElement.textContent);
+  let seconds = /*10000000;*/ Number(timerElement.textContent);
   // \/ salva correctCounter nello storage locale del browser
   // \/ per accederci da un altro .js
   localStorage.setItem("result", correctCounter);
@@ -237,10 +443,14 @@ function updateCountdown(qc) {
   if (seconds > 1) {
     seconds--;
     timerElement.textContent = seconds;
-  } else if (qc === 9) {
+  } else if (qc === Number(savedUserChoice) - 1) {
     //se il contatore di domande arriva al limite apri result
     window.location.href = "../html/results.html";
-  } else {
+  }
+  // else if(qc === savedUserChoice){
+  //   window.location.href = "../html/results.html";
+  // }
+  else {
     //se secondi arriva al limite incrementa il contatore delle domande
     //e resetta i vari elementi che vanno ricaricati
     risposte.innerHTML = "";
@@ -254,13 +464,30 @@ function updateCountdown(qc) {
   }
 }
 
+function primaDomanda() {//definisce il counter della prima domanda in modo che non sia indefinito
+  const pCounter = document.getElementById("Counter");
+  pCounter.innerHTML =
+    "QUESTION " +
+    (questionCounter + 1) +
+    "<span>" +
+    " / " +
+    savedUserChoice +
+    "</span>";
+}
+primaDomanda();
+
 // Aggiorna il countdown ogni secondo
 let countdownInterval = setInterval(function () {
   updateCountdown(questionCounter);
 }, 1000);
 //Contatore domande del benchmark
-function Contatore (questionCounter)
-{
-  const pCounter= document.getElementById('Counter')//paragrafo del counter
-  pCounter.innerHTML = "QUESTION "+(questionCounter+1)+ "<span>"+" / "+10+"</span>";//nuovo paragrafo con span
+function Contatore(questionCounter) {
+  const pCounter = document.getElementById("Counter"); //paragrafo del counter
+  pCounter.innerHTML =
+    "QUESTION " +
+    (questionCounter + 1) +
+    "<span>" +
+    " / " +
+    savedUserChoice +
+    "</span>"; //nuovo paragrafo con span
 }

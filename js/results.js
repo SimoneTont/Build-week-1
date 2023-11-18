@@ -1,3 +1,5 @@
+var savedUserChoice = localStorage.getItem("userChoice");
+
 // Bottone che al click porta alla feedback page
 let btn = document.querySelector("button");
 btn.addEventListener("click", feedbackPage);
@@ -8,7 +10,7 @@ function feedbackPage() {
 
 // Il valore "result" del localstorage viene assegnato alla variabile "correct"
 let correct = localStorage.getItem("result");
-let sbagliati = 10 - correct;
+let sbagliati = savedUserChoice - correct;
 
 console.log(correct);
 
@@ -75,7 +77,7 @@ new Chart("myChart", {
 let risultatoCorretto = document.querySelector("#Corretto p");
 // Aggiorna il testo dell'elemento HTML con la percentuale di risposte corrette
 function testoCorretti() {
-  risultatoCorretto.innerText = `${(correct / 10) * 100}%`;
+  risultatoCorretto.innerText = `${(correct / savedUserChoice * 100).toFixed(1)}%`;//.toFixed per avere i due numeri decimali
 }
 // Chiama la funzione per aggiornare il testo
 testoCorretti();
@@ -84,7 +86,7 @@ testoCorretti();
 let risultatoSbagliato = document.querySelector("#Sbagliato p");
 // Aggiorna il testo dell'elemento HTML con la percentuale di risposte sbagliate
 function testoSbagliato() {
-  risultatoSbagliato.innerText = `${(sbagliati / 10) * 100}%`;
+  risultatoSbagliato.innerText = `${(sbagliati / savedUserChoice * 100).toFixed(1)}%`;//.toFixed per avere i due numeri decimali
 }
 
 // Chiama la funzione per aggiornare il testo
@@ -93,7 +95,7 @@ testoSbagliato();
 let fraseCorretto = document.querySelector("#Corretto .TestoPiccolo");
 
 function risultatoConSlashCorretto() {
-  fraseCorretto.innerText = correct + "/10 questions";
+  fraseCorretto.innerText = correct + "/" + savedUserChoice + "questions";
 }
 
 risultatoConSlashCorretto();
@@ -101,7 +103,7 @@ risultatoConSlashCorretto();
 let fraseNonCorretto = document.querySelector("#Sbagliato .TestoPiccolo");
 
 function risultatoConSlashNonCorretto() {
-  fraseNonCorretto.innerText = sbagliati + "/10 questions";
+  fraseNonCorretto.innerText = sbagliati + "/" + savedUserChoice + "questions";
 }
 
 risultatoConSlashNonCorretto();

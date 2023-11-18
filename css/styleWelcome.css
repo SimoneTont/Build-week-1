@@ -71,6 +71,37 @@ ul span {
   font-weight: 800;
 }
 
+/*FORM DIFFICOLTÀ E NUMERO DI DOMANDE*/
+
+.diff{
+  margin-bottom: 1rem;
+}
+.opzioni{
+  margin-bottom: 1rem;
+  background: transparent;
+  width: 6rem;
+  height: 2rem;
+  color: white;
+  border: 2px solid white;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+}
+
+select option {
+  background-color: #d20094;
+  color: white;
+}
+
+/*DA VEDERE*/
+/* select option:hover {
+  background-color: rgb(17, 5, 13);
+  color: white;
+} */
+
+/* select:focus > option:hover { 
+  background-color: #000 !important;
+} */
+
 /* Layout form e checkbox */
 
 .form-welcome {

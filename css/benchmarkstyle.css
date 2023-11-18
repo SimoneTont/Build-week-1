@@ -25,7 +25,7 @@ img {
 
 /*contenitore div del timer countdown*/
 #countdown {
-  margin: 10px;
+  margin: -1rem;
   height: 160px;
   width: 160px;
   margin-left: auto;
@@ -41,6 +41,7 @@ img {
   stroke: #00ffff;
   fill: none;
   animation: countdown 10s linear infinite forwards;
+  animation-delay: 1s;
 }
 
 /*È il cerchio bianco fermo sotto il cerchio blu*/
@@ -74,7 +75,7 @@ svg text {
 /*DOMANDA*/
 
 #domanda {
-  margin: 4rem;
+  margin: 2rem 4rem 4rem 4rem;
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
@@ -90,29 +91,35 @@ svg text {
 button {
   text-align: center;
   color: rgb(253, 249, 249);
-  border-radius: 2rem;
-  height: 3rem;
-  width: 15rem;
+  border-radius: 13rem;
+  height: 5rem;
+  width: 20rem;
   font-size: 1rem;
   margin: 1rem;
+  border: 3px solid;
   background: rgb(255, 255, 255, 0.1);
-  border-color: white;
+  border-color: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(79,79,79,1) 100%);
 }
 
 /*Proprietà del bottone quando ci passo sopra il mouse*/
 button:hover {
-  background-color: rgb(209, 0, 146);
+  background: rgb(200,1,144);
+  background: linear-gradient(180deg, rgba(200,1,144,1) 0%, rgba(142,1,123,1) 100%);
   border-color: rgba(241, 241, 241, 0.5);
+  
 }
 
 /*Per allineare i bottoni all'interno di div #rispsote*/
 #risposte {
   text-align: center;
+  width: 45rem;
+  margin-left: auto;
+  margin-right: auto ;
 }
 
 /*TRACKER*/
 #Counter {
-  margin-top: 15%;
+  margin-top: 10%;
   text-align: center;
   color: white;
   letter-spacing: 2px;
