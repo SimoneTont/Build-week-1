@@ -60,11 +60,11 @@ const SendFeedback = function()
     //console.log(stelleAzzurre)
     if (feedback==="")
     {
-        feedbackMessage="Il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 è stato spedito a EPICODE"
+        feedbackMessage="Your rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 has been succesfully sent to EPICODE"
     }
     else
     {
-        feedbackMessage="Il tuo feedback: "+feedback+"<br>E il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 <br>Sono stati spediti a EPICODE"
+        feedbackMessage="Your feedback: "+feedback+"<br>And your rating "+stelleAzzurre+"/".match(new RegExp("/"))+"10 <br>have been succesfully sent to EPICODE"
     }
     //window.alert(feedbackMessage)
     const para = document.createElement("p");//Crea il paragrafo
