@@ -8,7 +8,7 @@ $(function() {
 
     star_elements = $('.fa-star').parent(); //Elementi stella
     
-    star_elements.find(".fa-star").mouseenter(changeRatingStars); //Quando passi con il mouse attiva la funzione changeRatingStars
+    star_elements.find(".fa-star").click(changeRatingStars); //Quando passi con il mouse attiva la funzione changeRatingStars
 
     //Colora di azzurro quando ci passi sopra
     function changeRatingStars() {
@@ -30,12 +30,27 @@ $(function() {
 const  GlowingButton = function()
 {
     const button = document.getElementsByTagName('button') //assegna button
-    // Quando vai su button aggiungi classe Glowing
-    button[0].addEventListener("mousemove", (event) => {
-        event=button[0].classList.add("Glowing")
-    })
-    // Quando il mouse si sposta da button, rimuovi class Glowing
-    button[0].addEventListener("mouseleave", (event) => {
-        event=button[0].classList.remove("Glowing")
-    })
+    
+    for (let i=0;i<button.length;i++) //Ciclo for per applicare a tutti i button
+    {
+        // Quando vai su button aggiungi classe Glowing
+        button[i].addEventListener("mousemove", (event) => {
+        event=button[i].classList.add("Glowing")
+        })
+        // Quando il mouse si sposta da button, rimuovi class Glowing
+        button[i].addEventListener("mouseleave", (event) => {
+        event=button[i].classList.remove("Glowing")
+        })
+    }
+}
+
+//Manda il feedback
+
+const SendFeedback = function()
+{
+    let feedback=document.querySelector('textarea').value
+    let stelleAzzurre=document.querySelectorAll('.azure').length
+    //console.log(stelleAzzurre)
+    feedbackMessage="Il tuo feedback: "+feedback+"\n E il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10"+"\n Sono stati spediti a EPICODE"
+    window.alert(feedbackMessage)
 }
