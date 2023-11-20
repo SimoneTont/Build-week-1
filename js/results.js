@@ -13,7 +13,7 @@ let correct = localStorage.getItem("result");
 let sbagliati = savedUserChoice - correct;
 
 console.log(correct);
-
+console.log(savedUserChoice);
 // Definisce valori sull'asse x e y
 var xValues = ["Wrong", "Correct"];
 var yValues = [sbagliati, correct];
@@ -77,7 +77,9 @@ new Chart("myChart", {
 let risultatoCorretto = document.querySelector("#Corretto p");
 // Aggiorna il testo dell'elemento HTML con la percentuale di risposte corrette
 function testoCorretti() {
-  risultatoCorretto.innerText = `${(correct / savedUserChoice * 100).toFixed(1)}%`;//.toFixed per avere i due numeri decimali
+  risultatoCorretto.innerText = `${((correct / savedUserChoice) * 100).toFixed(
+    1
+  )}%`; //.toFixed per avere i due numeri decimali
 }
 // Chiama la funzione per aggiornare il testo
 testoCorretti();
@@ -86,7 +88,10 @@ testoCorretti();
 let risultatoSbagliato = document.querySelector("#Sbagliato p");
 // Aggiorna il testo dell'elemento HTML con la percentuale di risposte sbagliate
 function testoSbagliato() {
-  risultatoSbagliato.innerText = `${(sbagliati / savedUserChoice * 100).toFixed(1)}%`;//.toFixed per avere i due numeri decimali
+  risultatoSbagliato.innerText = `${(
+    (sbagliati / savedUserChoice) *
+    100
+  ).toFixed(1)}%`; //.toFixed per avere i due numeri decimali
 }
 
 // Chiama la funzione per aggiornare il testo
