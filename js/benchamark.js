@@ -321,7 +321,7 @@ Contatore(questionCounter);
 //controlla se una risposta è corretta
 function correctACheck(event, qc) {
   const isCorrect = event.target.innerText; // Modifica per ottenere il testo del bottone
-  const difficulty = savedUserChoiceText.toLowerCase(); // Modalità di difficoltà selezionata 
+  const difficulty = savedUserChoiceText.toLowerCase(); // Modalità di difficoltà selezionata
 
   //Filtra l'array questions per trovare le domande con la difficoltà selezionata dall'utente in Welcome
   const currentQuestion = questions.filter(
