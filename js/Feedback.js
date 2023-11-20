@@ -68,10 +68,8 @@ const SendFeedback = function()
     }
     //window.alert(feedbackMessage)
     const para = document.createElement("p");//Crea il paragrafo
-    const node = document.createTextNode("Dummy text");//Setta il messaggio scritto sopra come testo del paragrafo
-    para.appendChild(node);
+    para.innerHTML=feedbackMessage//Setta HTML del nuovo paragrafo usando la stringa feedbackMessage
     const element = document.getElementById("FeedbackInviato");//Dove scrivere il nuovo paragrafo
     element.appendChild(para);
-    para.innerHTML=feedbackMessage
-    console.log(para)
+    //console.log(para)
 }
