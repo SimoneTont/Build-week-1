@@ -123,11 +123,6 @@ button {
   cursor: pointer;
   border: none;
 }
-/*Pulsante feedback*/
-#FeedbackButton
-{
-  text-align: right;
-}
 
 .Glowing /* Classe Glowing, serve per il bottone luminoso in JS */ {
   box-shadow: 3px 3px 15px #00ffff;

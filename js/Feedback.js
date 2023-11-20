@@ -48,9 +48,28 @@ const  GlowingButton = function()
 
 const SendFeedback = function()
 {
-    let feedback=document.querySelector('textarea').value
-    let stelleAzzurre=document.querySelectorAll('.azure').length
+    //Controlla se è  già presente un paragrafo feedback
+    let controllo=document.querySelector("#FeedbackInviato > p")
+    //console.log(controllo)
+    if(controllo !== null)
+    {
+        controllo.remove() //Se già presente, rimuovilo (Evita di creare altri paragrafi se clicchi più volte invia feedback)
+    } 
+    let feedback=document.querySelector('textarea').value//Prende testo da campo input
+    let stelleAzzurre=document.querySelectorAll('.azure').length //Misura quante stelle sono azzurre
     //console.log(stelleAzzurre)
-    feedbackMessage="Il tuo feedback: "+feedback+"\n E il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10"+"\n Sono stati spediti a EPICODE"
-    window.alert(feedbackMessage)
+    if (feedback==="")
+    {
+        feedbackMessage="Il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 è stato spedito a EPICODE"
+    }
+    else
+    {
+        feedbackMessage="Il tuo feedback: "+feedback+"<br>e il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 <br>sono stati spediti a EPICODE"
+    }
+    //window.alert(feedbackMessage)
+    const para = document.createElement("p");//Crea il paragrafo
+    para.innerHTML=feedbackMessage//Setta HTML del nuovo paragrafo usando la stringa feedbackMessage
+    const element = document.getElementById("FeedbackInviato");//Dove scrivere il nuovo paragrafo
+    element.appendChild(para);
+    //console.log(para)
 }
