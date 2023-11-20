@@ -50,14 +50,16 @@
       <form>
         <div><p class="diff">Choose Difficulty</p>
         <select class="opzioni" id="userChoice1" onchange="saveUserChoice1()">
-          <option value="Easy" selected>Easy</option>
+          <option value="" selected="selected" hidden="hidden">Choose here (ex. Easy)</option>
+          <option value="Easy">Easy</option>
           <option value="Medium">Medium</option>
           <option value="Hard">Hard</option>
         </select ></div>
         <div>
           <p class="diff">Choose how many questions</p>
-        <select class="opzioni" id="userChoice" onchange="saveUserChoice()">
-          <option value=1 selected>1</option>
+          <select class="opzioni" id="userChoice" onchange="saveUserChoice()">
+          <option option value="" selected="selected" hidden="hidden">Choose here (ex. 1)</option>
+          <option value=1>1</option>
           <option value=2>2</option>
           <option value=3>3</option>
           <option value=4>4</option>
