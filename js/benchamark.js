@@ -308,11 +308,8 @@ window.onload = function () {
 
     nextQuestion(event, questionCounter);
     correctACheck(event, questionCounter);
-    updateCountdown(questionCounter);
-    Contatore(questionCounter);
 
     // \/ viene dichiarato qua per la stessa ragione di timerContainer
-    timerElement.textContent = 10;
   });
 };
 
@@ -321,16 +318,22 @@ Contatore(questionCounter);
 //controlla se una risposta è corretta
 function correctACheck(event, qc) {
   const isCorrect = event.target.innerText; // Modifica per ottenere il testo del bottone
-  const difficulty = savedUserChoiceText.toLowerCase(); // Modalità di difficoltà selezionata 
+  const difficulty = savedUserChoiceText.toLowerCase(); // Modalità di difficoltà selezionata
 
   //Filtra l'array questions per trovare le domande con la difficoltà selezionata dall'utente in Welcome
   const currentQuestion = questions.filter(
     (q) => q.difficulty === difficulty //verifica se la difficoltà della domanda q è uguale al valore della variabile difficulty
   )[qc - 1]; //sottraendo 1 selezioni l'elemento corrispondente nella posizione desiderata. Ricordiamoci che l'indice parte da 0.
 
-  if (isCorrect === currentQuestion.correct_answer) {
+  if (
+    isCorrect === currentQuestion.correct_answer &&
+    correctCounter < savedUserChoice
+  ) {
     correctCounter++;
+    event.target.style.backgroundColor = "green";
     console.log(correctCounter);
+  } else {
+    event.target.style.backgroundColor = "red";
   }
 }
 
@@ -339,7 +342,8 @@ function correctACheck(event, qc) {
 function loadQ(qc) {
   // Filtra le domande in base alla difficoltà selezionata dall'utente
   const filteredQuestions = questions.filter(
-    (question) => question.difficulty.toLowerCase() === savedUserChoiceText.toLowerCase()
+    (question) =>
+      question.difficulty.toLowerCase() === savedUserChoiceText.toLowerCase()
   );
 
   // Se ci sono domande disponibili con la difficoltà selezionata, carica la domanda
@@ -352,7 +356,6 @@ function loadQ(qc) {
     window.location.href = "../html/results.html";
   }
 }
-
 
 // function timer(qc) {
 //   if (time > 0) {
@@ -377,12 +380,12 @@ function loadQ(qc) {
 // document.addEventListener("DOMContentLoaded", function() {
 // var selectElement = document.getElementById("userChoice");
 
-console.log(savedUserChoiceText);//per controllare
+console.log(savedUserChoiceText); //per controllare
 
 // if (savedUserChoice) {
 //   selectElement.value = savedUserChoice;
 // }
-console.log(savedUserChoice);//per controllare
+console.log(savedUserChoice); //per controllare
 // console.log(selectElement);
 // });
 
@@ -397,13 +400,24 @@ function nextQuestion(event, qc) {
     console.log(isButton);
     qc++;
     questionCounter++;
-    if (qc === Number(savedUserChoice)) {
-      window.location.href = "../html/results.html";
-    } else {
-      console.log(qc);
-      risposte.innerHTML = "";
+
+    console.log(qc);
+    // risposte.innerHTML = "";
+    let clickInterval = setInterval(() => {
+      if (qc === Number(savedUserChoice)) {
+        window.location.href = "../html/results.html";
+      }
       loadQ(qc);
-    }
+      Contatore(questionCounter);
+
+      timerElement.textContent = 10;
+
+      clearInterval(clickInterval);
+      countdownInterval = setInterval(function () {
+        updateCountdown(questionCounter);
+      }, 1000);
+      clearInterval(countdownInterval);
+    }, 1000);
   }
 }
 //genere un tutti i bottoni e inserice le risposte in dei
@@ -412,23 +426,21 @@ function nextQuestion(event, qc) {
 function genButton(qc, filteredQuestions) {
   let answersNum = filteredQuestions[qc].incorrect_answers.length + 1;
 
-  let buttonsContainer = document.getElementById("risposte");// Calcola il numero totale di risposte
+  let buttonsContainer = document.getElementById("risposte"); // Calcola il numero totale di risposte
   buttonsContainer.innerHTML = ""; // Pulisce i pulsanti precedenti, altrimenti li aggiunge a quelli precedenti
 
-  let answers = [...filteredQuestions[qc].incorrect_answers];// Crea un array contenente tutte le risposte, inclusa quella corretta
+  let answers = [...filteredQuestions[qc].incorrect_answers]; // Crea un array contenente tutte le risposte, inclusa quella corretta
   answers.push(filteredQuestions[qc].correct_answer);
 
-  
-  answers = answers.sort(() => Math.random() - 0.5);// Mischia le risposte in modo casuale
+  answers = answers.sort(() => Math.random() - 0.5); // Mischia le risposte in modo casuale
 
-  for (let i = 0; i < answersNum; i++) {// Itera attraverso tutte le risposte e crea un bottone per ciascuna
+  for (let i = 0; i < answersNum; i++) {
+    // Itera attraverso tutte le risposte e crea un bottone per ciascuna
     let buttonCreate = document.createElement("button");
     buttonCreate.innerText = answers[i];
     buttonsContainer.appendChild(buttonCreate);
   }
 }
-
-
 
 //TIMER
 
@@ -464,7 +476,8 @@ function updateCountdown(qc) {
   }
 }
 
-function primaDomanda() {//definisce il counter della prima domanda in modo che non sia indefinito
+function primaDomanda() {
+  //definisce il counter della prima domanda in modo che non sia indefinito
   const pCounter = document.getElementById("Counter");
   pCounter.innerHTML =
     "QUESTION " +

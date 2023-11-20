@@ -98,15 +98,22 @@ button {
   margin: 1rem;
   border: 3px solid;
   background: rgb(255, 255, 255, 0.1);
-  border-color: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(79,79,79,1) 100%);
+  border-color: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(79, 79, 79, 1) 100%
+  );
 }
 
 /*Proprietà del bottone quando ci passo sopra il mouse*/
 button:hover {
-  background: rgb(200,1,144);
-  background: linear-gradient(180deg, rgba(200,1,144,1) 0%, rgba(142,1,123,1) 100%);
+  background: rgba(200, 1, 144, 0.585);
+  background: linear-gradient(
+    180deg,
+    rgba(200, 1, 144, 0.43) 0%,
+    rgba(142, 1, 123, 0.407) 100%
+  );
   border-color: rgba(241, 241, 241, 0.5);
-  
 }
 
 /*Per allineare i bottoni all'interno di div #rispsote*/
@@ -114,7 +121,7 @@ button:hover {
   text-align: center;
   width: 45rem;
   margin-left: auto;
-  margin-right: auto ;
+  margin-right: auto;
 }
 
 /*TRACKER*/
