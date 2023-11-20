@@ -299,11 +299,7 @@ window.onload = function () {
   risposte.addEventListener("click", (event) => {
     // \/ viene dichiarato qua perche dopo verra eliminato e reinserito, se fosse stato dichiarato
     // \/ globalmente non sarebbe riuscito a selezionare gli svg generati dopo la prima domanda
-    let timerContainer = document.querySelector("svg");
-    // \/ duplica, rimpiazza e ri-seleziona il timer al click
-    let duplicate = timerContainer.cloneNode(true);
-    timerContainer.parentNode.replaceChild(duplicate, timerContainer);
-    timerElement = document.getElementById("timer");
+
     //
 
     nextQuestion(event, questionCounter);
@@ -327,12 +323,13 @@ function correctACheck(event, qc) {
 
   if (
     isCorrect === currentQuestion.correct_answer &&
-    correctCounter < savedUserChoice
+    correctCounter < savedUserChoice &&
+    event.target.nodeName === "BUTTON"
   ) {
     correctCounter++;
     event.target.style.backgroundColor = "green";
     console.log(correctCounter);
-  } else {
+  } else if (event.target.nodeName === "BUTTON") {
     event.target.style.backgroundColor = "red";
   }
 }
@@ -397,16 +394,17 @@ function nextQuestion(event, qc) {
   //controlla se viene effetivamente cliccato un label, dato che
   //l'eventListener è su tutta la div
   if (isButton === "BUTTON") {
-    console.log(isButton);
-    qc++;
-    questionCounter++;
-
     console.log(qc);
     // risposte.innerHTML = "";
     let clickInterval = setInterval(() => {
       if (qc === Number(savedUserChoice)) {
         window.location.href = "../html/results.html";
       }
+      let timerContainer = document.querySelector("svg");
+      // \/ duplica, rimpiazza e ri-seleziona il timer al click
+      let duplicate = timerContainer.cloneNode(true);
+      timerContainer.parentNode.replaceChild(duplicate, timerContainer);
+      timerElement = document.getElementById("timer");
       loadQ(qc);
       Contatore(questionCounter);
 
@@ -418,6 +416,10 @@ function nextQuestion(event, qc) {
       }, 1000);
       clearInterval(countdownInterval);
     }, 1000);
+    console.log(isButton);
+
+    qc++;
+    questionCounter++;
   }
 }
 //genere un tutti i bottoni e inserice le risposte in dei
