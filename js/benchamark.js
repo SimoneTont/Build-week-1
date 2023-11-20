@@ -294,19 +294,7 @@ const questions = [
 //funzione che parte al caricamento della pagina
 window.onload = function () {
   loadQ(questionCounter);
-
   //click event listener per le risposte
-  risposte.addEventListener("click", (event) => {
-    // \/ viene dichiarato qua perche dopo verra eliminato e reinserito, se fosse stato dichiarato
-    // \/ globalmente non sarebbe riuscito a selezionare gli svg generati dopo la prima domanda
-
-    //
-
-    nextQuestion(event, questionCounter);
-    correctACheck(event, questionCounter);
-
-    // \/ viene dichiarato qua per la stessa ragione di timerContainer
-  });
 };
 
 Contatore(questionCounter);
@@ -328,6 +316,7 @@ function correctACheck(event, qc) {
   ) {
     correctCounter++;
     event.target.style.backgroundColor = "green";
+
     console.log(correctCounter);
   } else if (event.target.nodeName === "BUTTON") {
     event.target.style.backgroundColor = "red";
@@ -430,11 +419,20 @@ function genButton(qc, filteredQuestions) {
 
   let buttonsContainer = document.getElementById("risposte"); // Calcola il numero totale di risposte
   buttonsContainer.innerHTML = ""; // Pulisce i pulsanti precedenti, altrimenti li aggiunge a quelli precedenti
-
   let answers = [...filteredQuestions[qc].incorrect_answers]; // Crea un array contenente tutte le risposte, inclusa quella corretta
   answers.push(filteredQuestions[qc].correct_answer);
 
   answers = answers.sort(() => Math.random() - 0.5); // Mischia le risposte in modo casuale
+
+  risposte.addEventListener(
+    "click",
+    (event) => {
+      nextQuestion(event, questionCounter);
+      correctACheck(event, questionCounter);
+      // \/ viene dichiarato qua per la stessa ragione di timerContainer
+    },
+    { once: true }
+  );
 
   for (let i = 0; i < answersNum; i++) {
     // Itera attraverso tutte le risposte e crea un bottone per ciascuna
