@@ -64,7 +64,7 @@ const SendFeedback = function()
     }
     else
     {
-        feedbackMessage="Il tuo feedback: "+feedback+"<br>e il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 <br>sono stati spediti a EPICODE"
+        feedbackMessage="Il tuo feedback: "+feedback+"<br>E il tuo rating: "+stelleAzzurre+"/".match(new RegExp("/"))+"10 <br>Sono stati spediti a EPICODE"
     }
     //window.alert(feedbackMessage)
     const para = document.createElement("p");//Crea il paragrafo
