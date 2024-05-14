@@ -1,5 +1,8 @@
 <h1> Benchmark Simulator IT - README </h1>
 
+![welcome](assets/BW1-2.jpg)
+
+
 Benvenuti nel Benchmark Simulator IT, un progetto sviluppato durante la Build Week 1 dal nostro eccezionale team. Questa piattaforma interattiva consente agli utenti di generare quiz a tema informatico, personalizzati secondo le proprie preferenze.
 
 <b>Funzionalità Principali:</b>
@@ -10,6 +13,7 @@ Benvenuti nel Benchmark Simulator IT, un progetto sviluppato durante la Build We
 
 <b>Valutazione del Quiz in Percentuale</b>: Alla fine del quiz, gli utenti riceveranno un punteggio espresso in percentuale, che riflette la loro performance. Questo permette loro di valutare il proprio livello di conoscenza e identificare eventuali aree in cui possono migliorare.
 
+![img](assets/BW1-1.jpg)
 Come Usare:
 
 <b>Seleziona le Opzioni del Quiz</b>: All'avvio, l'utente sarà guidato attraverso un processo intuitivo per selezionare il numero di domande e la complessità desiderata.
@@ -17,6 +21,8 @@ Come Usare:
 <b>Rispondi alle Domande</b>: Una volta avviato il quiz, rispondi alle domande fornite. Assicurati di leggere attentamente ogni domanda e selezionare la risposta corretta.
 
 <b>Visualizza il Risultato</b>: Alla fine del quiz, verrà visualizzato il tuo punteggio in percentuale insieme a un breve resoconto della tua performance.
+
+![results](assets/BW1-3.jpg)
 
 Crediti:
 
